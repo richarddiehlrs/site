@@ -1,26 +1,75 @@
-@import "tailwindcss";
+/* Este arquivo usa PostCSS e Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --primary-color: #0f2027;
+  --secondary-color: #8b7d55;
+  --background-light: #f8f9fa;
+  --text-color: #333333;
+  --accent-color: #c0a87b;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  background: white;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  margin-top: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+@layer components {
+  .container-wrapper {
+    @apply max-w-6xl mx-auto px-4;
+  }
+  
+  /* Classes responsivas separadas */
+  @screen sm {
+    .container-wrapper {
+      @apply px-6;
+    }
+  }
+  
+  @screen lg {
+    .container-wrapper {
+      @apply px-8;
+    }
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-primary mb-6 font-playfair;
+  }
+  
+  .section-subtitle {
+    @apply text-xl md:text-2xl font-semibold text-secondary mb-4 font-playfair;
+  }
 }

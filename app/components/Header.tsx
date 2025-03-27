@@ -1,0 +1,212 @@
+'use client';
+
+import { useState } from 'react';
+import Image from 'next/image';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
+import Container from '@mui/material/Container';
+import Button from '@mui/material/Button';
+import MenuItem from '@mui/material/MenuItem';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
+import { useTheme } from '@mui/material/styles';
+import { alpha } from '@mui/material';
+
+// Definindo a cor bordô para consistência com a seção Sobre Nós
+const bordeauxColor = '#260d0d';
+
+const pages = [
+  { title: 'Home', id: 'home' },
+  { title: 'Áreas de Atuação', id: 'atuacao' }, 
+  { title: 'Sobre Nós', id: 'sobre' },
+  { title: 'Planejamento', id: 'planejamento' },
+  { title: 'Contato', id: 'contato' }
+];
+
+const Header = () => {
+  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
+  const theme = useTheme();
+  
+  // Detector de rolagem para alterar a aparência do cabeçalho
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 50,
+  });
+
+  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElNav(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const handleScrollToSection = (id: string) => {
+    handleCloseNavMenu();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <AppBar 
+      position="fixed" 
+      sx={{ 
+        backgroundColor: trigger ? bordeauxColor : 'transparent',
+        boxShadow: trigger ? '0 4px 20px rgba(0, 0, 0, 0.25)' : 0,
+        transition: 'all 0.3s ease',
+      }}
+    >
+      <Container maxWidth="lg">
+        <Toolbar disableGutters>
+          {/* Logo Desktop */}
+          <Box
+            component="a"
+            href="#home"
+            sx={{
+              mr: 3,
+              display: { xs: 'none', md: 'flex' },
+              alignItems: 'center',
+              textDecoration: 'none',
+              transform: 'translateY(4px)',
+              transition: 'transform 0.3s ease',
+              '&:hover': {
+                transform: 'translateY(4px) scale(1.02)',
+              },
+            }}
+          >
+            <Box 
+              sx={{ 
+                position: 'relative',
+                boxShadow: trigger ? `0 4px 20px ${alpha('#000', 0.2)}` : 'none',
+                borderRadius: '4px',
+                overflow: 'hidden',
+                transition: 'box-shadow 0.3s ease',
+                padding: '2px',
+                backgroundColor: trigger ? 'white' : 'transparent',
+              }}
+            >
+              <Image
+                src="/images/4ce7142d-36b2-42ed-ac5b-97103c248abd.png"
+                alt="D&R Advocacia Logo"
+                width={220}
+                height={62}
+                style={{ 
+                  filter: trigger ? 'none' : 'brightness(0) invert(1)',
+                  transition: 'filter 0.3s ease',
+                }}
+                priority
+              />
+            </Box>
+          </Box>
+
+          {/* Menu Mobile */}
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size="large"
+              aria-label="menu de navegação"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              sx={{ 
+                color: 'white'
+              }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+              }}
+            >
+              {pages.map((page) => (
+                <MenuItem key={page.id} onClick={() => handleScrollToSection(page.id)}>
+                  <Typography textAlign="center">{page.title}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+
+          {/* Logo Mobile */}
+          <Box
+            component="a"
+            href="#home"
+            sx={{
+              display: { xs: 'flex', md: 'none' },
+              flexGrow: 1,
+              alignItems: 'center',
+              justifyContent: 'center',
+              textDecoration: 'none',
+            }}
+          >
+            <Box 
+              sx={{ 
+                position: 'relative',
+                boxShadow: trigger ? `0 4px 15px ${alpha('#000', 0.2)}` : 'none',
+                borderRadius: '4px',
+                overflow: 'hidden',
+                transition: 'box-shadow 0.3s ease',
+                padding: '2px',
+                backgroundColor: trigger ? 'white' : 'transparent',
+              }}
+            >
+              <Image
+                src="/images/4ce7142d-36b2-42ed-ac5b-97103c248abd.png"
+                alt="D&R Advocacia Logo"
+                width={180}
+                height={50}
+                style={{ 
+                  filter: trigger ? 'none' : 'brightness(0) invert(1)',
+                  transition: 'filter 0.3s ease',
+                }}
+                priority
+              />
+            </Box>
+          </Box>
+
+          {/* Desktop Navigation */}
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
+            {pages.map((page) => (
+              <Button
+                key={page.id}
+                onClick={() => handleScrollToSection(page.id)}
+                sx={{ 
+                  my: 2, 
+                  color: 'white',
+                  display: 'block',
+                  fontWeight: 500,
+                  transition: 'color 0.3s ease',
+                  '&:hover': {
+                    color: theme.palette.secondary.light,
+                  }
+                }}
+              >
+                {page.title}
+              </Button>
+            ))}
+          </Box>
+        </Toolbar>
+      </Container>
+    </AppBar>
+  );
+};
+
+export default Header; 
