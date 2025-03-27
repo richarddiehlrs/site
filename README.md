@@ -1,11 +1,11 @@
 # D&R Advocacia - Site Institucional
 
-Este é o site institucional do escritório de advocacia D&R, desenvolvido utilizando Next.js e Tailwind CSS.
+Este é o site institucional do escritório de advocacia D&R, desenvolvido utilizando Next.js e Material UI.
 
 ## Tecnologias Utilizadas
 
 - [Next.js](https://nextjs.org/) - Framework React para desenvolvimento web
-- [Tailwind CSS](https://tailwindcss.com/) - Framework CSS para estilização
+- [Material UI](https://mui.com/) - Framework de componentes React
 - [React Icons](https://react-icons.github.io/react-icons/) - Biblioteca de ícones
 - [Framer Motion](https://www.framer.com/motion/) - Biblioteca para animações
 
@@ -16,6 +16,7 @@ Este é o site institucional do escritório de advocacia D&R, desenvolvido utili
 - Seções: Home, Áreas de Atuação, Sobre Nós, Planejamento e Contato
 - Animações suaves durante a navegação
 - SEO otimizado
+- Design elegante com tema em bordô escuro
 
 ## Requisitos
 
@@ -26,8 +27,8 @@ Este é o site institucional do escritório de advocacia D&R, desenvolvido utili
 
 1. Clone o repositório:
 ```bash
-git clone [url-do-repositorio]
-cd [nome-do-repositorio]
+git clone https://github.com/richarddiehlrs/site.git
+cd site
 ```
 
 2. Instale as dependências:
@@ -57,10 +58,9 @@ A maneira mais fácil de implantar seu aplicativo Next.js é usar a [Plataforma 
 
 Para personalizar o site:
 
-- As cores e fontes podem ser ajustadas em `app/globals.css`
-- Configurações do Tailwind estão em `tailwind.config.js`
-- Imagens podem ser adicionadas na pasta `public/images`
+- As cores e tema podem ser ajustadas em `app/theme.ts`
 - Textos e conteúdos podem ser editados nos componentes dentro da pasta `app/components`
+- Imagens podem ser adicionadas na pasta `public/images`
 
 ## Estrutura do Projeto
 
@@ -70,11 +70,11 @@ site/
 │   ├── components/   # Componentes React
 │   ├── globals.css   # Estilos globais
 │   ├── layout.tsx    # Layout principal
+│   ├── theme.ts      # Configuração do tema Material UI
 │   └── page.tsx      # Página principal
 ├── public/           # Arquivos estáticos
 │   └── images/       # Imagens
-├── next.config.ts    # Configurações do Next.js
-└── tailwind.config.js # Configuração do Tailwind CSS
+└── next.config.js    # Configurações do Next.js
 ```
 
 ## Licença
