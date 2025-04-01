@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { Box, Typography, Container, Grid, Link as MuiLink, Divider, useTheme, alpha } from '@mui/material';
+import { Box, Typography, Container, Grid, Link as MuiLink, Divider, useTheme } from '@mui/material';
 import { FaInstagram, FaPhone, FaEnvelope } from 'react-icons/fa';
 
 const Footer = () => {

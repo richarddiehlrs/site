@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Box, Tooltip, Zoom, useTheme, alpha } from '@mui/material';
+import { Box, Tooltip, Zoom, alpha } from '@mui/material';
 import { FaWhatsapp } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -11,10 +11,6 @@ const WHATSAPP_MESSAGE = 'Olá! Gostaria de saber mais sobre os serviços da D&R
 
 const WhatsAppButton = () => {
   const [visible, setVisible] = useState(false);
-  const theme = useTheme();
-
-  // A cor bordô usada no resto do site
-  const bordeauxColor = '#260d0d';
 
   // Controle de visibilidade - só aparece após rolar um pouco
   useEffect(() => {

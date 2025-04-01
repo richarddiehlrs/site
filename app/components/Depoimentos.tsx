@@ -1,8 +1,7 @@
 'use client';
 
-import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Box, Typography, Container, Grid, Paper, useTheme, alpha, Avatar, Card, CardContent, Rating } from '@mui/material';
+import { Box, Typography, Container, Grid, useTheme, alpha, Avatar, Card, CardContent, Rating } from '@mui/material';
 import { FaQuoteLeft } from 'react-icons/fa';
 
 // Mesma cor bordô usada no Header e outros componentes

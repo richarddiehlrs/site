@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaBalanceScale, FaHome, FaBuilding, FaHandshake, FaUserTie, FaUsers, FaBriefcase, FaCalculator, FaFileContract } from 'react-icons/fa';
+import { FaBuilding, FaHandshake, FaUserTie, FaBriefcase, FaCalculator, FaFileContract } from 'react-icons/fa';
 import { Box, Typography, Container, Grid, Paper, useTheme } from '@mui/material';
 
 const AreasAtuacao = () => {
