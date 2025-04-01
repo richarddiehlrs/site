@@ -190,7 +190,87 @@ const Planejamento = () => {
                 lineHeight: 1.7,
               }}
             >
-              Na D&R Advocacia, planejamento jurídico estratégico não é apenas prevenção. É o que garante que você tome decisões com segurança, proteja o que já construiu e cresça com confiança.
+              <Typography
+                component="span"
+                sx={{
+                  display: 'block',
+                  fontSize: '1.4rem',
+                  fontWeight: 700,
+                  mb: 1,
+                  color: 'white',
+                }}
+              >
+                Na D&R Advocacia, planejamento jurídico estratégico não é apenas prevenção.
+              </Typography>
+              <Typography
+                component="span"
+                sx={{
+                  display: 'block',
+                  fontSize: '1.2rem',
+                  fontWeight: 600,
+                  mb: 1.5,
+                  color: theme.palette.secondary.light,
+                }}
+              >
+                É o que garante que você tome decisões com segurança, proteja o que já construiu e cresça com confiança.
+              </Typography>
+            </Typography>
+          </Card>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          viewport={{ once: true }}
+          style={{ marginTop: '2rem', textAlign: 'center' }}
+        >
+          <Card
+            elevation={0}
+            sx={{
+              py: 4,
+              px: 6,
+              background: alpha(theme.palette.secondary.main, 0.1),
+              backdropFilter: 'blur(8px)',
+              borderRadius: 1,
+              border: `1px solid ${alpha(theme.palette.secondary.main, 0.2)}`,
+            }}
+          >
+            <Typography
+              variant="body1"
+              sx={{
+                maxWidth: '900px',
+                mx: 'auto',
+                fontSize: '1.125rem',
+                color: alpha('#fff', 0.95),
+                lineHeight: 1.7,
+              }}
+            >
+              <Typography
+                component="span"
+                sx={{
+                  display: 'block',
+                  fontSize: '1.4rem',
+                  fontWeight: 700,
+                  mb: 1,
+                  color: 'white',
+                }}
+              >
+                Você está pronto para tomar decisões com segurança e crescer com tranquilidade?
+              </Typography>
+              <Typography
+                component="span"
+                sx={{
+                  display: 'block',
+                  fontSize: '1.2rem',
+                  fontWeight: 600,
+                  mb: 1.5,
+                  color: theme.palette.secondary.light,
+                }}
+              >
+                Aqui, você não será mais um processo. Será um projeto estratégico.
+              </Typography>
+              Fale com a D&R e veja como nosso atendimento consultivo pode proteger sua empresa e ampliar seus resultados.
             </Typography>
           </Card>
         </motion.div>
