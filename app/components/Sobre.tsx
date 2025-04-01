@@ -71,7 +71,19 @@ const Sobre = () => {
               color: alpha('#fff', 0.95),
             }}
           >
-            Conheça os profissionais dedicados a oferecer o melhor atendimento jurídico para você e sua empresa.
+            <Typography
+              component="span"
+              sx={{
+                display: 'block',
+                fontSize: '1.35rem',
+                fontWeight: 700,
+                mb: 1.5,
+                color: theme.palette.secondary.light
+              }}
+            >
+              Especialistas em Advocacia Empresarial e Blindagem Patrimonial
+            </Typography>
+            Conheça os profissionais por trás da D&R, com experiência sólida e visão estratégica para proteger seu patrimônio e impulsionar seu crescimento.
           </Typography>
         </motion.div>
 
@@ -126,7 +138,7 @@ const Sobre = () => {
                         mb: 1
                       }}
                     >
-                      Dr. ...
+                      Dr. Daniel Rolim
                     </Typography>
                     <Typography 
                       variant="subtitle1"

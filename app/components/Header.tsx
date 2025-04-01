@@ -23,6 +23,7 @@ const pages = [
   { title: 'Home', id: 'home' },
   { title: 'Áreas de Atuação', id: 'atuacao' }, 
   { title: 'Sobre Nós', id: 'sobre' },
+  { title: 'Depoimentos', id: 'depoimentos' },
   { title: 'Planejamento', id: 'planejamento' },
   { title: 'Contato', id: 'contato' }
 ];
@@ -88,7 +89,7 @@ const Header = () => {
                 overflow: 'hidden',
                 transition: 'box-shadow 0.3s ease',
                 padding: '2px',
-                backgroundColor: trigger ? 'white' : 'transparent',
+                backgroundColor: 'transparent',
               }}
             >
               <Image
@@ -97,7 +98,7 @@ const Header = () => {
                 width={220}
                 height={62}
                 style={{ 
-                  filter: trigger ? 'none' : 'brightness(0) invert(1)',
+                  filter: 'brightness(0) invert(1)',
                   transition: 'filter 0.3s ease',
                 }}
                 priority
@@ -165,7 +166,7 @@ const Header = () => {
                 overflow: 'hidden',
                 transition: 'box-shadow 0.3s ease',
                 padding: '2px',
-                backgroundColor: trigger ? 'white' : 'transparent',
+                backgroundColor: 'transparent',
               }}
             >
               <Image
@@ -174,7 +175,7 @@ const Header = () => {
                 width={180}
                 height={50}
                 style={{ 
-                  filter: trigger ? 'none' : 'brightness(0) invert(1)',
+                  filter: 'brightness(0) invert(1)',
                   transition: 'filter 0.3s ease',
                 }}
                 priority

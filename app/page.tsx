@@ -6,10 +6,12 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import AreasAtuacao from './components/AreasAtuacao';
 import Sobre from './components/Sobre';
+import Depoimentos from './components/Depoimentos';
 import Planejamento from './components/Planejamento';
 import Contato from './components/Contato';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import WhatsAppButton from './components/WhatsAppButton';
 
 export default function Home() {
   return (
@@ -19,10 +21,12 @@ export default function Home() {
         <Hero />
         <AreasAtuacao />
         <Sobre />
+        <Depoimentos />
         <Planejamento />
         <Contato />
         <Footer />
         <ScrollToTop />
+        <WhatsAppButton />
       </Box>
     </Providers>
   );

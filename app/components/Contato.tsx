@@ -97,13 +97,14 @@ const Contato = () => {
               <Card elevation={2} sx={{ borderRadius: 1, height: '100%' }}>
                 <CardContent sx={{ p: 4 }}>
                   <Typography
-                    variant="h5"
+                    variant="h4"
                     component="h3"
                     sx={{
-                      fontFamily: theme.typography.h5.fontFamily,
-                      fontWeight: 600,
+                      fontFamily: theme.typography.h4.fontFamily,
+                      fontWeight: 700,
                       color: theme.palette.primary.main,
                       mb: 3,
+                      fontSize: { xs: '1.5rem', md: '1.8rem' },
                     }}
                   >
                     Envie-nos uma mensagem
@@ -201,13 +202,14 @@ const Contato = () => {
               >
                 <CardContent sx={{ p: 4 }}>
                   <Typography
-                    variant="h5"
+                    variant="h4"
                     component="h3"
                     sx={{
-                      fontFamily: theme.typography.h5.fontFamily,
-                      fontWeight: 600,
+                      fontFamily: theme.typography.h4.fontFamily,
+                      fontWeight: 700,
                       color: 'white',
                       mb: 3,
+                      fontSize: { xs: '1.5rem', md: '1.8rem' },
                     }}
                   >
                     Informações de Contato

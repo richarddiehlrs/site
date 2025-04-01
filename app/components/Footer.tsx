@@ -27,7 +27,7 @@ const Footer = () => {
                 position: 'relative',
                 padding: 1,
                 borderRadius: 1,
-                background: `linear-gradient(135deg, ${alpha('#fff', 0.1)} 0%, ${alpha('#fff', 0.05)} 100%)`,
+                background: 'transparent',
                 transition: 'transform 0.3s ease',
                 '&:hover': {
                   transform: 'scale(1.02)',
@@ -103,6 +103,7 @@ const Footer = () => {
                 { title: 'Home', id: 'home' },
                 { title: 'Áreas de Atuação', id: 'atuacao' },
                 { title: 'Sobre Nós', id: 'sobre' },
+                { title: 'Depoimentos', id: 'depoimentos' },
                 { title: 'Planejamento', id: 'planejamento' },
                 { title: 'Contato', id: 'contato' }
               ].map((link, index) => (

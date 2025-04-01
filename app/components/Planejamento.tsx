@@ -10,23 +10,23 @@ const Planejamento = () => {
   const steps = [
     {
       icon: <FaLightbulb style={{ fontSize: '1.75rem', color: 'white' }} />,
-      title: 'Análise e Consultoria',
-      description: 'Identificamos oportunidades e riscos jurídicos através de uma análise detalhada da sua situação específica.'
+      title: 'Diagnóstico Jurídico Personalizado',
+      description: 'Identificamos riscos ocultos e oportunidades estratégicas com base em uma análise profunda da sua realidade empresarial ou patrimonial.'
     },
     {
       icon: <FaFileAlt style={{ fontSize: '1.75rem', color: 'white' }} />,
-      title: 'Planejamento Estratégico',
-      description: 'Desenvolvemos estratégias jurídicas personalizadas para alcançar seus objetivos e proteger seus interesses.'
+      title: 'Estratégia Jurídica Sob Medida',
+      description: 'Desenhamos um plano jurídico totalmente alinhado aos seus objetivos, protegendo você e sua empresa com inteligência e antecipação.'
     },
     {
       icon: <FaChartLine style={{ fontSize: '1.75rem', color: 'white' }} />,
-      title: 'Implementação e Acompanhamento',
-      description: 'Colocamos o plano em prática e monitoramos sua eficácia, fazendo ajustes quando necessário para resultados efetivos.'
+      title: 'Execução com Acompanhamento Inteligente',
+      description: 'Implementamos a estratégia traçada e ajustamos o plano de ação conforme os resultados, garantindo eficiência e segurança contínua.'
     },
     {
       icon: <FaShieldAlt style={{ fontSize: '1.75rem', color: 'white' }} />,
-      title: 'Segurança Jurídica',
-      description: 'Garantimos a conformidade legal e a proteção dos seus direitos e patrimônio a longo prazo com soluções consistentes.'
+      title: 'Blindagem e Segurança Jurídica',
+      description: 'Cuidamos da regularidade legal e da proteção de tudo o que você construiu — para que você cresça com tranquilidade, sem surpresas.'
     }
   ];
 
@@ -72,7 +72,7 @@ const Planejamento = () => {
               mb: 2,
             }}
           >
-            Planejamento Jurídico
+            Planejamento Jurídico Estratégico
           </Typography>
           <Box
             sx={{
@@ -92,7 +92,7 @@ const Planejamento = () => {
               color: alpha('#fff', 0.9),
             }}
           >
-            Nossa abordagem estratégica garante soluções jurídicas eficientes e personalizadas para cada cliente.
+            Blindamos empresas e patrimônios com inteligência jurídica, antecipando riscos e criando estruturas sólidas para decisões seguras e crescimento sustentável.
           </Typography>
         </motion.div>
 
@@ -190,9 +190,7 @@ const Planejamento = () => {
                 lineHeight: 1.7,
               }}
             >
-              Na D&R Advocacia, acreditamos que um bom planejamento jurídico é essencial para evitar problemas futuros. 
-              Nossa equipe está pronta para auxiliar você ou sua empresa a navegar pelo complexo sistema legal brasileiro 
-              com segurança e eficiência.
+              Na D&R Advocacia, planejamento jurídico estratégico não é apenas prevenção. É o que garante que você tome decisões com segurança, proteja o que já construiu e cresça com confiança.
             </Typography>
           </Card>
         </motion.div>

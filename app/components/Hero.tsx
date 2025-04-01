@@ -1,15 +1,14 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Box, Typography, Container, Button, Stack, useTheme } from '@mui/material';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Box, Typography, Container, Button, Stack, useTheme, alpha } from '@mui/material';
 import { keyframes } from '@mui/system';
-import { alpha } from '@mui/material/styles';
 
-// Definindo as cores do fundo texturizado
-const blackColor = '#0A0A0A';
 const bordeauxColor = '#260d0d';
 const darkBordeauxColor = '#1a0808';
-const lightBordeauxColor = '#3d1414';
+const lightBordeauxColor = '#491a1a';
+const blackColor = '#0A0A0A';
 
 const fadeIn = keyframes`
   from {
@@ -31,12 +30,44 @@ const shimmer = keyframes`
   }
 `;
 
-const Hero = () => {
-  const [mounted, setMounted] = useState(false);
-  const theme = useTheme();
+// Array com todos os textos que serão alternados
+const heroTexts = [
+  {
+    title: "Transformamos negócios com segurança jurídica.",
+    content: [
+      "✅ Mais do que resolver problemas, blindamos o que você construiu e preparamos sua empresa — e seu patrimônio — para crescer com confiança e estratégia.",
+      "✅ Com atendimento personalizado, visão preventiva e foco em resultados, somos o parceiro jurídico que antecipa riscos e protege o que realmente importa para você — porque nascemos para ser referência nacional em advocacia empresarial estratégica."
+    ]
+  },
+  {
+    title: "O Que Faz da D&R uma Escolha Inteligente",
+    content: [
+      "✅ Advocacia preventiva que evita problemas antes que aconteçam. Atuamos de forma estratégica para prevenir riscos jurídicos antes que se tornem conflitos ou processos — protegendo o patrimônio e o futuro do cliente.",
+      "✅ Atendimento personalizado que constrói confiança. Cada cliente é único. Nosso atendimento é próximo, contínuo e estratégico, com foco em relações duradouras."
+    ]
+  },
+  {
+    title: "Por que escolher a D&R Advocacia",
+    content: [
+      "✅ Foco em educação jurídica que transforma conhecimento em poder. Empoderamos nossos clientes com conhecimento. Oferecemos conteúdos e orientações práticas para que estejam sempre um passo à frente.",
+      "✅ Multidisciplinaridade e estratégia integrada. Reunimos diferentes áreas do direito em um só lugar, com visão estratégica e soluções completas para empresas e famílias."
+    ]
+  }
+];
 
+const Hero = () => {
+  const theme = useTheme();
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const [mounted, setMounted] = useState(false);
+  
+  // Alternar entre os textos a cada 10 segundos
   useEffect(() => {
     setMounted(true);
+    const interval = setInterval(() => {
+      setCurrentTextIndex((prevIndex) => (prevIndex + 1) % heroTexts.length);
+    }, 10000);
+    
+    return () => clearInterval(interval);
   }, []);
 
   if (!mounted) {
@@ -88,13 +119,8 @@ const Hero = () => {
         },
       }}
     >
-      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2 }}>
-        <Box
-          sx={{
-            maxWidth: 'md',
-            animation: mounted ? `${fadeIn} 0.8s ease-out` : 'none',
-          }}
-        >
+      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2, pt: { xs: 8, md: 0 } }}>
+        <Box sx={{ maxWidth: '800px', animation: mounted ? `${fadeIn} 0.8s ease-out` : 'none' }}>
           <Typography
             variant="h1"
             component="h1"
@@ -117,26 +143,84 @@ const Hero = () => {
               }
             }}
           >
-            Assessoria Jurídica Especializada
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentTextIndex}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.8 }}
+              >
+                {heroTexts[currentTextIndex].title}
+              </motion.div>
+            </AnimatePresence>
           </Typography>
-          <Typography
-            variant="h5"
+          
+          <Box
             sx={{
               color: alpha('#e0e0e0', 0.95),
               mb: 4,
               mt: 4,
               fontWeight: 400,
-              fontSize: { xs: '1.25rem', md: '1.5rem' },
-              maxWidth: '90%',
+              fontSize: { xs: '1.2rem', md: '1.4rem' },
+              maxWidth: '95%',
               textShadow: `1px 1px 2px ${alpha(blackColor, 0.7)}`,
+              lineHeight: 1.7,
+              minHeight: '240px'
             }}
           >
-            Soluções jurídicas personalizadas para proteger seus interesses e direitos
-          </Typography>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentTextIndex}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+              >
+                {heroTexts[currentTextIndex].content.map((paragraph, idx) => (
+                  <Typography 
+                    key={idx} 
+                    variant="h5" 
+                    component="div" 
+                    sx={{ 
+                      mb: 3, 
+                      fontWeight: idx === 0 ? 500 : 400,
+                      fontSize: idx === 0 ? { xs: '1.2rem', md: '1.4rem' } : { xs: '1.1rem', md: '1.3rem' },
+                      opacity: idx === 0 ? 1 : 0.95,
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      lineHeight: 1.7
+                    }}
+                  >
+                    {paragraph}
+                  </Typography>
+                ))}
+              </motion.div>
+            </AnimatePresence>
+          </Box>
+          
+          {/* Indicadores para mostrar qual slide está ativo */}
+          <Box sx={{ display: 'flex', gap: 1, mb: 4, justifyContent: 'center' }}>
+            {heroTexts.map((_, index) => (
+              <Box
+                key={index}
+                onClick={() => setCurrentTextIndex(index)}
+                sx={{
+                  width: '10px',
+                  height: '10px',
+                  borderRadius: '50%',
+                  backgroundColor: index === currentTextIndex ? theme.palette.secondary.light : alpha('#fff', 0.5),
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease'
+                }}
+              />
+            ))}
+          </Box>
+          
           <Stack
             direction={{ xs: 'column', sm: 'row' }}
             spacing={2}
-            sx={{ mt: 6 }}
+            sx={{ mt: 2 }}
           >
             <Button
               variant="contained"
@@ -152,7 +236,7 @@ const Hero = () => {
                 },
               }}
             >
-              Áreas de Atuação
+              Conheça Nossas Soluções
             </Button>
             <Button
               variant="outlined"
@@ -170,7 +254,7 @@ const Hero = () => {
                 },
               }}
             >
-              Entre em Contato
+              Fale com um Especialista
             </Button>
           </Stack>
         </Box>
