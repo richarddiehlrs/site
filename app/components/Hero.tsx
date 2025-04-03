@@ -79,31 +79,14 @@ const Hero = () => {
       id="home"
       component="section"
       sx={{
+        position: 'relative',
         height: '100vh',
+        minHeight: '600px',
         display: 'flex',
         alignItems: 'center',
-        position: 'relative',
-        background: `
-          linear-gradient(to right, ${alpha(blackColor, 0.9)}, ${alpha(blackColor, 0.95)}),
-          repeating-linear-gradient(
-            45deg, 
-            ${alpha(bordeauxColor, 0.05)} 0px, 
-            ${alpha(bordeauxColor, 0.08)} 2px, 
-            transparent 2px, 
-            transparent 10px
-          ),
-          radial-gradient(
-            circle at 50% 50%,
-            ${alpha(bordeauxColor, 0.05)} 0%,
-            ${alpha(bordeauxColor, 0.02)} 20%,
-            ${alpha(bordeauxColor, 0.01)} 40%,
-            transparent 60%
-          ),
-          url("/images/pattern.png")
-        `,
-        backgroundSize: 'cover, auto, cover, 400px',
-        backgroundPosition: 'center',
-        backgroundBlendMode: 'normal, overlay, overlay, normal',
+        justifyContent: 'center',
+        color: 'white',
+        overflow: 'hidden',
         '&::before': {
           content: '""',
           position: 'absolute',
@@ -111,12 +94,24 @@ const Hero = () => {
           left: 0,
           width: '100%',
           height: '100%',
-          background: `linear-gradient(110deg, ${alpha(bordeauxColor, 0.15)} 0%, ${alpha(darkBordeauxColor, 0.05)} 100%)`,
-          backgroundSize: '200% 100%',
-          animation: `${shimmer} 15s infinite linear`,
+          backgroundImage: 'url("/images/slide-image.jpg")',
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          opacity: 0.25,
           zIndex: 1,
-          pointerEvents: 'none',
         },
+        '&::after': {
+          content: '""',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          background: `linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, ${bordeauxColor} 100%)`,
+          zIndex: 2,
+        },
+        mt: { xs: '-60px', md: '-70px' }, // Compensa o padding-top adicionado ao main
       }}
     >
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2, pt: { xs: 8, md: 0 } }}>

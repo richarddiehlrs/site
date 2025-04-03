@@ -19,6 +19,18 @@ body {
   font-family: 'Inter', Arial, sans-serif;
 }
 
+/* Ajuste para o header fixo */
+main {
+  padding-top: 70px; /* Espaço para o header fixo */
+}
+
+/* Ajustes responsivos para o header */
+@media (max-width: 600px) {
+  main {
+    padding-top: 60px; /* Menor espaço em dispositivos móveis */
+  }
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', serif;
   margin-top: 0;
@@ -27,6 +39,11 @@ h1, h2, h3, h4, h5, h6 {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+/* Ajustes específicos para seções com IDs */
+#home {
+  padding-top: 0; /* Remover padding adicional da seção hero */
 }
 
 .container {
