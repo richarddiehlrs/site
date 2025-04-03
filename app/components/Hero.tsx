@@ -59,12 +59,12 @@ const Hero = () => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [mounted, setMounted] = useState(false);
   
-  // Alternar entre os textos a cada 10 segundos
+  // Alternar entre os textos a cada 15 segundos
   useEffect(() => {
     setMounted(true);
     const interval = setInterval(() => {
       setCurrentTextIndex((prevIndex) => (prevIndex + 1) % heroTexts.length);
-    }, 10000);
+    }, 15000);
     
     return () => clearInterval(interval);
   }, []);
