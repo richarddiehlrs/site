@@ -9,6 +9,13 @@ const bordeauxColor = '#260d0d';
 const Depoimentos = () => {
   const theme = useTheme();
   
+  const formatDRText = (text: string) => {
+    return text.split('D&R').map((part, i, arr) => {
+      if (i === arr.length - 1) return part;
+      return <>{part}D<span style={{ fontFamily: 'serif' }}>&</span>R</>;
+    });
+  };
+  
   const testimonials = [
     {
       name: 'Natália Carvalho',
@@ -164,7 +171,7 @@ const Depoimentos = () => {
                       lineHeight: 1.6,
                       whiteSpace: testimonial.quote.length > 100 ? 'pre-line' : 'normal' // Usar pre-line apenas para depoimentos longos
                     }}>
-                      {testimonial.quote}
+                      {formatDRText(testimonial.quote)}
                     </Typography>
                   </CardContent>
                 </Card>

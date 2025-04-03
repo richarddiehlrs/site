@@ -167,7 +167,7 @@ const Footer = () => {
         
         <Box sx={{ pt: 3, textAlign: 'center' }}>
           <Typography variant="body2" color="grey.400">
-            © {year} D&R Advocacia - Todos os direitos reservados
+            © {year} D<span style={{ fontFamily: 'serif' }}>&</span>R Advocacia - Todos os direitos reservados
           </Typography>
         </Box>
       </Container>

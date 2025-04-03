@@ -209,7 +209,7 @@ const Planejamento = () => {
                   fontFamily: theme.typography.h4.fontFamily,
                 }}
               >
-                Na D&R Advocacia, planejamento jurídico estratégico não é apenas prevenção.
+                Na D<span style={{ fontFamily: 'serif' }}>&</span>R Advocacia, planejamento jurídico estratégico não é apenas prevenção.
               </Typography>
               <Typography
                 component="span"
@@ -228,14 +228,13 @@ const Planejamento = () => {
                 component="span"
                 sx={{
                   display: 'block',
-                  fontSize: '1.1rem',
                   fontWeight: 500,
                   mt: 2,
-                  color: theme.palette.text.secondary,
+                  color: bordeauxColor,
                   fontFamily: theme.typography.body1.fontFamily,
                 }}
               >
-                Fale com a D&R e veja como nosso atendimento consultivo pode proteger sua empresa e ampliar seus resultados.
+                Fale com a D<span style={{ fontFamily: 'serif' }}>&</span>R e veja como nosso atendimento consultivo pode proteger sua empresa e ampliar seus resultados.
               </Typography>
             </Typography>
           </Card>
@@ -299,11 +298,11 @@ const Planejamento = () => {
               <Typography
                 component="span"
                 sx={{
-                  color: theme.palette.secondary.main,
+                  color: bordeauxColor,
                   fontWeight: 500,
                 }}
               >
-                Fale com a D&R e veja como nosso atendimento consultivo pode proteger sua empresa e ampliar seus resultados.
+                Fale com a D<span style={{ fontFamily: 'serif' }}>&</span>R e veja como nosso atendimento consultivo pode proteger sua empresa e ampliar seus resultados.
               </Typography>
             </Typography>
           </Card>
