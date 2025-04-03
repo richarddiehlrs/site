@@ -19,8 +19,8 @@ const Depoimentos = () => {
       featured: false,
     },
     {
-      name: 'Rodrigo C.',
-      role: 'Empresário',
+      name: 'Rodrigo Correia',
+      role: 'RC Mídias',
       avatar: '/images/rodrigo.jpg', // Placeholder - precisa ser adicionada
       quote: 'Antes da D&R, cada decisão jurídica era um risco. Hoje, tenho um parceiro estratégico que antecipa tudo e protege meu negócio.',
       rating: 5,
