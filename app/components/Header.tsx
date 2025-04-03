@@ -58,7 +58,7 @@ const Header = () => {
     <AppBar 
       position="fixed" 
       sx={{ 
-        backgroundColor: trigger ? bordeauxColor : 'black',
+        backgroundColor: bordeauxColor,
         boxShadow: trigger ? '0 4px 20px rgba(0, 0, 0, 0.25)' : '0 2px 10px rgba(0, 0, 0, 0.15)',
         transition: 'all 0.3s ease',
       }}
