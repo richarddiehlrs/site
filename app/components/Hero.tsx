@@ -79,15 +79,15 @@ const Hero = () => {
       component="section"
       sx={{
         position: 'relative',
-        height: { xs: 'auto', md: '100vh' },
-        minHeight: { xs: '90vh', md: '600px' },
-        paddingTop: { xs: '80px', md: '0' },
-        paddingBottom: { xs: '60px', md: '0' },
+        height: 'auto',
+        minHeight: { xs: '100vh', md: '100vh' },
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         color: 'white',
-        overflow: 'hidden',
+        overflow: 'visible',
+        paddingTop: { xs: '100px', sm: '120px', md: '80px' },
+        paddingBottom: { xs: '60px', sm: '80px', md: '60px' },
         background: `
           linear-gradient(to right, ${alpha(blackColor, 0.9)}, ${alpha(blackColor, 0.95)}),
           repeating-linear-gradient(
@@ -121,12 +121,27 @@ const Hero = () => {
           animation: `${fadeIn} 15s infinite linear`,
           zIndex: 1,
           pointerEvents: 'none',
-        },
-        mt: { xs: '0', md: '0' },
+        }
       }}
     >
-      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2, pt: { xs: 8, md: 0 } }}>
-        <Box sx={{ maxWidth: '800px', animation: mounted ? `${fadeIn} 0.8s ease-out` : 'none' }}>
+      <Container 
+        maxWidth="lg" 
+        sx={{ 
+          position: 'relative', 
+          zIndex: 2,
+          display: 'flex',
+          flexDirection: 'column',
+          minHeight: { xs: 'calc(100vh - 160px)', md: 'auto' },
+          justifyContent: 'center'
+        }}
+      >
+        <Box sx={{ 
+          maxWidth: { xs: '100%', md: '800px' },
+          animation: mounted ? `${fadeIn} 0.8s ease-out` : 'none',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: { xs: 3, md: 4 }
+        }}>
           <Typography
             variant="h1"
             component="h1"
@@ -134,8 +149,9 @@ const Hero = () => {
               color: 'white',
               fontFamily: theme.typography.h1.fontFamily,
               fontWeight: 700,
-              fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem', lg: '3.5rem' },
-              mb: { xs: 1, md: 2 },
+              fontSize: { xs: '1.8rem', sm: '2.2rem', md: '2.8rem', lg: '3.2rem' },
+              lineHeight: { xs: 1.3, md: 1.2 },
+              mb: { xs: 2, md: 3 },
               textShadow: `1px 1px 3px ${alpha(blackColor, 0.6)}`,
               position: 'relative',
               '&::after': {
@@ -170,14 +186,14 @@ const Hero = () => {
           <Box
             sx={{
               color: alpha('#e0e0e0', 0.95),
-              mb: { xs: 3, md: 4 },
-              mt: { xs: 3, md: 4 },
+              mb: { xs: 2, sm: 3, md: 4 },
+              mt: { xs: 2, sm: 3, md: 4 },
               fontWeight: 400,
-              fontSize: { xs: '1rem', sm: '1.1rem', md: '1.2rem', lg: '1.3rem' },
-              maxWidth: '95%',
+              fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem', lg: '1.2rem' },
+              maxWidth: '100%',
               textShadow: `1px 1px 2px ${alpha(blackColor, 0.7)}`,
-              lineHeight: 1.7,
-              minHeight: { xs: '200px', md: '240px' }
+              lineHeight: 1.6,
+              flex: 1
             }}
           >
             <AnimatePresence mode="wait">
@@ -241,30 +257,33 @@ const Hero = () => {
             ))}
           </Box>
           
-          <Stack
-            direction={{ xs: 'column', sm: 'row' }}
-            spacing={2}
-            sx={{ 
-              mt: 2,
-              position: 'relative',
-              zIndex: 10
-            }}
-          >
+          <Box sx={{ 
+            display: 'flex', 
+            flexDirection: { xs: 'column', sm: 'row' },
+            gap: { xs: 2, sm: 3 },
+            width: '100%',
+            mt: { xs: 3, md: 4 },
+            mb: { xs: 4, md: 5 }
+          }}>
             <Button
               variant="contained"
               href="#atuacao"
               size="large"
               sx={{
-                py: 1.5,
-                px: 4,
-                fontSize: '1rem',
+                py: { xs: 1.5, sm: 2 },
+                px: { xs: 3, sm: 4 },
+                fontSize: { xs: '0.9rem', sm: '1rem' },
                 bgcolor: bordeauxColor,
+                color: 'white',
+                width: { xs: '100%', sm: 'auto' },
+                minWidth: { sm: '200px' },
                 boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
-                WebkitBackfaceVisibility: 'hidden',
                 '&:hover': {
-                  bgcolor: alpha(bordeauxColor, 0.8),
+                  bgcolor: alpha(bordeauxColor, 0.9),
+                  transform: 'translateY(-2px)',
                   boxShadow: '0 6px 12px rgba(0,0,0,0.3)',
                 },
+                transition: 'all 0.3s ease'
               }}
             >
               Conheça Nossas Soluções
@@ -274,22 +293,25 @@ const Hero = () => {
               href="#contato"
               size="large"
               sx={{
-                py: 1.5,
-                px: 4,
-                fontSize: '1rem',
+                py: { xs: 1.5, sm: 2 },
+                px: { xs: 3, sm: 4 },
+                fontSize: { xs: '0.9rem', sm: '1rem' },
                 color: 'white',
+                width: { xs: '100%', sm: 'auto' },
+                minWidth: { sm: '200px' },
                 borderColor: alpha('#fff', 0.6),
                 borderWidth: '2px',
-                WebkitBackfaceVisibility: 'hidden',
                 '&:hover': {
                   borderColor: '#fff',
                   backgroundColor: alpha('#fff', 0.1),
+                  transform: 'translateY(-2px)',
                 },
+                transition: 'all 0.3s ease'
               }}
             >
               Fale com um Especialista
             </Button>
-          </Stack>
+          </Box>
         </Box>
       </Container>
 
