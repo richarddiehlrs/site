@@ -11,8 +11,8 @@ const Depoimentos = () => {
   
   const testimonials = [
     {
-      name: 'Natália C.',
-      role: 'Empresária',
+      name: 'Natália Carvalho',
+      role: 'Mentora e Estrategista de Negócios',
       avatar: '/images/natalia.jpg', // Placeholder - precisa ser adicionada
       quote: 'Trabalhar com Daniel e Jéssica da D&R Advocacia tem sido uma experiência transformadora para a minha empresa. Eles não são apenas advogados, são verdadeiros parceiros estratégicos. Desde o início, me impressionou a forma como eles se dedicam a entender profundamente o meu negócio e a antecipar os desafios jurídicos que poderíamos enfrentar.\n\nA D&R Advocacia nos proporcionou muito mais do que segurança jurídica. Eles nos ajudaram a construir uma base sólida para o crescimento sustentável da nossa empresa, com um planejamento jurídico estratégico e eficaz. A consultoria deles nos permitiu focar no que realmente importa: expandir nosso negócio, sabendo que estamos protegidos contra riscos.\n\nO profissionalismo, a expertise e a paixão que Daniel e Jéssica dedicam ao trabalho são realmente inspiradores. A D&R Advocacia não é apenas um escritório de advocacia, é um motor de crescimento para empresas que buscam o sucesso a longo prazo.\n\nMe sinto realmente segura e bem direcionada com eles.',
       rating: 5,
