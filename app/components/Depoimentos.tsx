@@ -96,7 +96,7 @@ const Depoimentos = () => {
                 fontSize: '1.35rem',
                 fontWeight: 700,
                 mb: 1.5,
-                color: theme.palette.primary.main
+                color: bordeauxColor
               }}
             >
               A visão de quem confia em nosso trabalho

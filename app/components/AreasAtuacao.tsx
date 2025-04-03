@@ -96,7 +96,7 @@ const AreasAtuacao = () => {
                 fontSize: '1.35rem',
                 fontWeight: 700,
                 mb: 1.5,
-                color: theme.palette.primary.main,
+                color: bordeauxColor,
               }}
             >
               Soluções Jurídicas que Protegem o que Importa
