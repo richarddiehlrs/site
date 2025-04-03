@@ -60,7 +60,7 @@ const Contato = () => {
             sx={{
               fontFamily: theme.typography.h2.fontFamily,
               fontWeight: 700,
-              color: theme.palette.primary.main,
+              color: bordeauxColor,
               mb: 2,
             }}
           >
@@ -81,6 +81,7 @@ const Contato = () => {
               maxWidth: '600px',
               mx: 'auto',
               fontSize: '1.125rem',
+              color: theme.palette.secondary.main,
             }}
           >
             Estamos à disposição para atender às suas necessidades jurídicas.

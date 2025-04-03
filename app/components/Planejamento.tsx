@@ -92,7 +92,7 @@ const Planejamento = () => {
               maxWidth: '600px',
               mx: 'auto',
               fontSize: '1.125rem',
-              color: theme.palette.text.secondary,
+              color: theme.palette.secondary.main,
             }}
           >
             Blindamos empresas e patrimônios com inteligência jurídica, antecipando riscos e criando estruturas sólidas para decisões seguras e crescimento sustentável.
@@ -280,7 +280,15 @@ const Planejamento = () => {
               >
                 Aqui, você não será mais um processo. Será um projeto estratégico.
               </Typography>
-              Fale com a D&R e veja como nosso atendimento consultivo pode proteger sua empresa e ampliar seus resultados.
+              <Typography
+                component="span"
+                sx={{
+                  color: theme.palette.secondary.main,
+                  fontWeight: 500,
+                }}
+              >
+                Fale com a D&R e veja como nosso atendimento consultivo pode proteger sua empresa e ampliar seus resultados.
+              </Typography>
             </Typography>
           </Card>
         </motion.div>

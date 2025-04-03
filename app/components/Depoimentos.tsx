@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { Box, Typography, Container, Grid, useTheme, alpha, Avatar, Card, CardContent, Rating } from '@mui/material';
-import { FaQuoteLeft } from 'react-icons/fa';
 
 // Mesma cor bordô usada no Header e outros componentes
 const bordeauxColor = '#260d0d';
@@ -12,16 +11,16 @@ const Depoimentos = () => {
   
   const testimonials = [
     {
-      name: 'Natália Carvalho',
-      role: 'Mentora e Estrategista de Negócios',
+      name: 'Natália C.',
+      role: 'Empresária',
       avatar: '/images/natalia.jpg', // Placeholder - precisa ser adicionada
       quote: 'Trabalhar com Daniel e Jéssica da D&R Advocacia tem sido uma experiência transformadora para a minha empresa. Eles não são apenas advogados, são verdadeiros parceiros estratégicos. Desde o início, me impressionou a forma como eles se dedicam a entender profundamente o meu negócio e a antecipar os desafios jurídicos que poderíamos enfrentar.\n\nA D&R Advocacia nos proporcionou muito mais do que segurança jurídica. Eles nos ajudaram a construir uma base sólida para o crescimento sustentável da nossa empresa, com um planejamento jurídico estratégico e eficaz. A consultoria deles nos permitiu focar no que realmente importa: expandir nosso negócio, sabendo que estamos protegidos contra riscos.\n\nO profissionalismo, a expertise e a paixão que Daniel e Jéssica dedicam ao trabalho são realmente inspiradores. A D&R Advocacia não é apenas um escritório de advocacia, é um motor de crescimento para empresas que buscam o sucesso a longo prazo.\n\nMe sinto realmente segura e bem direcionada com eles.',
       rating: 5,
-      featured: true,
+      featured: false,
     },
     {
-      name: 'Rodrigo Correia',
-      role: 'RC Mídias',
+      name: 'Rodrigo C.',
+      role: 'Empresário',
       avatar: '/images/rodrigo.jpg', // Placeholder - precisa ser adicionada
       quote: 'Antes da D&R, cada decisão jurídica era um risco. Hoje, tenho um parceiro estratégico que antecipa tudo e protege meu negócio.',
       rating: 5,
@@ -106,94 +105,9 @@ const Depoimentos = () => {
           </Typography>
         </motion.div>
 
-        {/* Depoimento Principal (Natália) */}
-        {testimonials[0].featured && (
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            style={{ marginBottom: '3rem' }}
-          >
-            <Card
-              elevation={3}
-              sx={{
-                borderRadius: 2,
-                overflow: 'hidden',
-                background: 'white',
-                boxShadow: `0 10px 30px ${alpha('#000', 0.1)}`,
-              }}
-            >
-              <Grid container>
-                <Grid 
-                  item 
-                  xs={12} 
-                  md={4}
-                  sx={{ 
-                    position: 'relative',
-                    minHeight: { xs: '300px', md: 'auto' },
-                    bgcolor: bordeauxColor,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    p: 4, 
-                    color: 'white',
-                    textAlign: 'center'
-                  }}
-                >
-                  <Box
-                    sx={{
-                      width: 180,
-                      height: 180,
-                      borderRadius: '50%',
-                      overflow: 'hidden',
-                      border: '4px solid white',
-                      boxShadow: `0 8px 30px ${alpha('#000', 0.2)}`,
-                      mb: 3,
-                      position: 'relative',
-                    }}
-                  >
-                    {/* 
-                      Note: Este é um placeholder. A imagem da Natália precisa ser adicionada em public/images/natalia.jpg 
-                      Se a imagem não estiver disponível, use um Avatar com as iniciais ou uma imagem de placeholder 
-                    */}
-                    <Box sx={{ width: '100%', height: '100%', bgcolor: theme.palette.secondary.light, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <Typography variant="h3" color="white">NC</Typography>
-                    </Box>
-                  </Box>
-                  <Typography variant="h5" component="h3" sx={{ fontWeight: 700, mb: 1 }}>
-                    {testimonials[0].name}
-                  </Typography>
-                  <Typography variant="body2" sx={{ opacity: 0.9, mb: 2 }}>
-                    {testimonials[0].role}
-                  </Typography>
-                  <Rating value={testimonials[0].rating} readOnly sx={{ 
-                    '& .MuiRating-iconFilled': {
-                      color: theme.palette.secondary.light,
-                    }
-                  }} />
-                </Grid>
-                <Grid item xs={12} md={8}>
-                  <CardContent sx={{ p: 5 }}>
-                    <FaQuoteLeft style={{ fontSize: '2rem', color: alpha(bordeauxColor, 0.2), marginBottom: '1rem' }} />
-                    <Typography variant="body1" color="text.secondary" sx={{ 
-                      mb: 3, 
-                      lineHeight: 1.8,
-                      whiteSpace: 'pre-line', // Para manter as quebras de linha do texto
-                    }}>
-                      {testimonials[0].quote}
-                    </Typography>
-                  </CardContent>
-                </Grid>
-              </Grid>
-            </Card>
-          </motion.div>
-        )}
-
-        {/* Depoimentos Secundários */}
+        {/* Depoimentos */}
         <Grid container spacing={4}>
-          {testimonials.filter(t => !t.featured).map((testimonial, index) => (
+          {testimonials.map((testimonial, index) => (
             <Grid item xs={12} md={6} key={index}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -237,8 +151,10 @@ const Depoimentos = () => {
                         />
                       </Box>
                     </Box>
-                    <FaQuoteLeft style={{ fontSize: '1.5rem', color: alpha(bordeauxColor, 0.2), marginBottom: '0.5rem' }} />
-                    <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.6 }}>
+                    <Typography variant="body1" color="text.secondary" sx={{ 
+                      lineHeight: 1.6,
+                      whiteSpace: testimonial.quote.length > 100 ? 'pre-line' : 'normal' // Usar pre-line apenas para depoimentos longos
+                    }}>
                       {testimonial.quote}
                     </Typography>
                   </CardContent>
