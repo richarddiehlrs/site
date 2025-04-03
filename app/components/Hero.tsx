@@ -134,8 +134,8 @@ const Hero = () => {
               color: 'white',
               fontFamily: theme.typography.h1.fontFamily,
               fontWeight: 700,
-              fontSize: { xs: '2.5rem', md: '3.5rem', lg: '4rem' },
-              mb: 2,
+              fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem', lg: '3.5rem' },
+              mb: { xs: 1, md: 2 },
               textShadow: `1px 1px 3px ${alpha(blackColor, 0.6)}`,
               position: 'relative',
               '&::after': {
@@ -170,14 +170,14 @@ const Hero = () => {
           <Box
             sx={{
               color: alpha('#e0e0e0', 0.95),
-              mb: 4,
-              mt: 4,
+              mb: { xs: 3, md: 4 },
+              mt: { xs: 3, md: 4 },
               fontWeight: 400,
-              fontSize: { xs: '1.2rem', md: '1.4rem' },
+              fontSize: { xs: '1rem', sm: '1.1rem', md: '1.2rem', lg: '1.3rem' },
               maxWidth: '95%',
               textShadow: `1px 1px 2px ${alpha(blackColor, 0.7)}`,
               lineHeight: 1.7,
-              minHeight: '240px'
+              minHeight: { xs: '200px', md: '240px' }
             }}
           >
             <AnimatePresence mode="wait">

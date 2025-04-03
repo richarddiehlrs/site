@@ -114,9 +114,9 @@ const AreasAtuacao = () => {
           </Typography>
         </motion.div>
 
-        <Grid container spacing={4}>
+        <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
           {areas.map((area, index) => (
-            <Grid item xs={12} md={6} lg={4} key={index}>
+            <Grid item xs={12} sm={6} md={4} key={index}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -126,9 +126,9 @@ const AreasAtuacao = () => {
                 <Paper
                   elevation={1}
                   sx={{
-                    p: 4,
+                    p: { xs: 2, sm: 3, md: 4 },
                     height: '100%',
-                    minHeight: '300px',
+                    minHeight: { xs: 'auto', md: '300px' },
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
@@ -149,6 +149,7 @@ const AreasAtuacao = () => {
                       fontWeight: 600,
                       color: bordeauxColor,
                       mb: 1.5,
+                      fontSize: { xs: '1.1rem', sm: '1.2rem', md: '1.25rem' }
                     }}
                   >
                     {area.title}
@@ -156,6 +157,10 @@ const AreasAtuacao = () => {
                   <Typography
                     variant="body2"
                     color="text.secondary"
+                    sx={{
+                      fontSize: { xs: '0.875rem', sm: '0.9rem', md: '0.95rem' },
+                      lineHeight: 1.6
+                    }}
                   >
                     {area.description}
                   </Typography>

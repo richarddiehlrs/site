@@ -87,7 +87,7 @@ const Sobre = () => {
           </Typography>
         </motion.div>
 
-        <Grid container spacing={6}>
+        <Grid container spacing={{ xs: 3, sm: 4, md: 6 }}>
           {/* Primeiro Advogado */}
           <Grid item xs={12} lg={6}>
             <motion.div
@@ -99,17 +99,18 @@ const Sobre = () => {
               <Paper 
                 elevation={3} 
                 sx={{ 
-                  p: 3,
+                  p: { xs: 2, sm: 2.5, md: 3 },
                   borderRadius: 1,
                   background: alpha('#fff', 0.99),
                   boxShadow: `0 10px 30px ${alpha('#000', 0.15)}`,
                 }}
               >
-                <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 4, alignItems: { xs: 'center', md: 'flex-start' } }}>
+                <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: { xs: 2, sm: 3, md: 4 }, alignItems: { xs: 'center', md: 'flex-start' } }}>
                   <Box
                     sx={{ 
-                      width: 260,
-                      height: 320,
+                      width: { xs: '100%', sm: '80%', md: 260 },
+                      height: { xs: 'auto', md: 320 },
+                      aspectRatio: { xs: '4/5', sm: '3/4', md: 'auto' },
                       flexShrink: 0,
                       position: 'relative',
                       boxShadow: `0 8px 25px ${alpha(bordeauxColor, 0.2)}`,
@@ -127,7 +128,7 @@ const Sobre = () => {
                       }}
                     />
                   </Box>
-                  <Box>
+                  <Box sx={{ width: '100%' }}>
                     <Typography 
                       variant="h4" 
                       component="h3" 
@@ -135,7 +136,8 @@ const Sobre = () => {
                         fontFamily: theme.typography.h4.fontFamily, 
                         fontWeight: 700, 
                         color: theme.palette.primary.main,
-                        mb: 1
+                        mb: 1,
+                        fontSize: { xs: '1.5rem', sm: '1.7rem', md: '2rem' }
                       }}
                     >
                       Daniel Rolim
@@ -145,18 +147,19 @@ const Sobre = () => {
                       sx={{ 
                         color: bordeauxColor, 
                         fontWeight: 600,
-                        mb: 2
+                        mb: 2,
+                        fontSize: { xs: '0.9rem', sm: '0.95rem', md: '1rem' }
                       }}
                     >
                       Advogado OAB/RS 108.354
                     </Typography>
-                    <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
+                    <Typography variant="body1" color="text.secondary" sx={{ mb: 2, fontSize: { xs: '0.9rem', sm: '0.95rem', md: '1rem' } }}>
                       Graduado em Direito pela Pontifícia Universidade Católica do Rio Grande do Sul (PUC-RS), com especialização em Direito Empresarial e Tributário pela PUC-RS.
                     </Typography>
-                    <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
+                    <Typography variant="body1" color="text.secondary" sx={{ mb: 2, fontSize: { xs: '0.9rem', sm: '0.95rem', md: '1rem' } }}>
                       Possui mais de 15 anos de experiência na área jurídica, tendo atuado em grandes escritórios de advocacia antes de fundar a D&R Advocacia.
                     </Typography>
-                    <Typography variant="body1" color="text.secondary">
+                    <Typography variant="body1" color="text.secondary" sx={{ fontSize: { xs: '0.9rem', sm: '0.95rem', md: '1rem' } }}>
                       Dedica-se principalmente às áreas de Direito Empresarial, Tributário e Contratos, com foco em soluções jurídicas eficientes para empresas de todos os portes.
                     </Typography>
                   </Box>
@@ -176,17 +179,18 @@ const Sobre = () => {
               <Paper 
                 elevation={3} 
                 sx={{ 
-                  p: 3,
+                  p: { xs: 2, sm: 2.5, md: 3 },
                   borderRadius: 1,
                   background: alpha('#fff', 0.99),
                   boxShadow: `0 10px 30px ${alpha('#000', 0.15)}`,
                 }}
               >
-                <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 4, alignItems: { xs: 'center', md: 'flex-start' } }}>
+                <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: { xs: 2, sm: 3, md: 4 }, alignItems: { xs: 'center', md: 'flex-start' } }}>
                   <Box
                     sx={{ 
-                      width: 260,
-                      height: 320,
+                      width: { xs: '100%', sm: '80%', md: 260 },
+                      height: { xs: 'auto', md: 320 },
+                      aspectRatio: { xs: '4/5', sm: '3/4', md: 'auto' },
                       flexShrink: 0,
                       position: 'relative',
                       boxShadow: `0 8px 25px ${alpha(bordeauxColor, 0.2)}`,
@@ -204,7 +208,7 @@ const Sobre = () => {
                       }}
                     />
                   </Box>
-                  <Box>
+                  <Box sx={{ width: '100%' }}>
                     <Typography 
                       variant="h4" 
                       component="h3" 
@@ -212,7 +216,8 @@ const Sobre = () => {
                         fontFamily: theme.typography.h4.fontFamily, 
                         fontWeight: 700, 
                         color: theme.palette.primary.main,
-                        mb: 1
+                        mb: 1,
+                        fontSize: { xs: '1.5rem', sm: '1.7rem', md: '2rem' }
                       }}
                     >
                       Jéssica Diehl
@@ -222,18 +227,19 @@ const Sobre = () => {
                       sx={{ 
                         color: bordeauxColor, 
                         fontWeight: 600,
-                        mb: 2
+                        mb: 2,
+                        fontSize: { xs: '0.9rem', sm: '0.95rem', md: '1rem' }
                       }}
                     >
                       Advogada OAB/RS 100.015
                     </Typography>
-                    <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
+                    <Typography variant="body1" color="text.secondary" sx={{ mb: 2, fontSize: { xs: '0.9rem', sm: '0.95rem', md: '1rem' } }}>
                       Graduada em Direito pela Pontifícia Universidade Católica do Rio Grande do Sul (PUC-RS), com especialização em Direito Societário pela FBT.
                     </Typography>
-                    <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
+                    <Typography variant="body1" color="text.secondary" sx={{ mb: 2, fontSize: { xs: '0.9rem', sm: '0.95rem', md: '1rem' } }}>
                       Possui experiência de mais de 10 anos na advocacia, com atuação destacada em Direito Tributário, Patrimonial e Sucessório.
                     </Typography>
-                    <Typography variant="body1" color="text.secondary">
+                    <Typography variant="body1" color="text.secondary" sx={{ fontSize: { xs: '0.9rem', sm: '0.95rem', md: '1rem' } }}>
                       Reconhecida por sua abordagem humanizada e atendimento personalizado, busca sempre as melhores soluções para seus clientes, seja por meio de acordos ou pela via judicial.
                     </Typography>
                   </Box>
