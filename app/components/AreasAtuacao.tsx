@@ -14,32 +14,32 @@ const AreasAtuacao = () => {
     {
       icon: <FaBriefcase style={{ fontSize: '2.5rem', marginBottom: '1rem', color: theme.palette.secondary.main }} />,
       title: 'Advocacia Corporativa',
-      description: 'Evite conflitos e garanta segurança nas suas relações jurídicas.\n\nOferecemos assessoria especializada em contratos, responsabilidade civil e defesa do consumidor. Atuamos com foco em soluções estratégicas e personalizadas, garantindo a melhor estrutura jurídica para o seu negócio.'
+      description: 'Evite conflitos e garanta segurança nas suas relações jurídicas.\n\nOferecemos assessoria especializada em contratos, responsabilidade civil e defesa do consumidor. Atuamos com foco preventivo em consultoria jurídica, contratos, gestão de riscos e atuação contenciosa, assegurando soluções eficazes e protegendo seus interesses.'
     },
     {
       icon: <FaBuilding style={{ fontSize: '2.5rem', marginBottom: '1rem', color: theme.palette.secondary.main }} />,
       title: 'Direito Empresarial',
-      description: 'Proteja sua empresa e tome decisões com segurança jurídica.\n\nOferecemos assessoria especializada em estruturação jurídica e operações societárias. Atuamos com foco em soluções estratégicas e personalizadas, garantindo a melhor estrutura empresarial para o seu negócio.'
+      description: 'Proteja sua empresa e tome decisões com segurança jurídica.\n\nOferecemos assessoria especializada em estruturação jurídica e operações societárias. Atuamos com foco preventivo em consultoria jurídica, contratos, gestão de riscos e atuação contenciosa, assegurando soluções eficazes e protegendo seus interesses.'
     },
     {
       icon: <FaCalculator style={{ fontSize: '2.5rem', marginBottom: '1rem', color: theme.palette.secondary.main }} />,
       title: 'Direito Tributário',
-      description: 'Reduza a carga tributária de forma legal e proteja seu patrimônio.\n\nOferecemos assessoria especializada em planejamento tributário e contencioso fiscal. Atuamos com foco em soluções estratégicas e personalizadas, garantindo a melhor estrutura fiscal para o seu negócio.'
+      description: 'Reduza a carga tributária de forma legal e proteja seu patrimônio.\n\nOferecemos assessoria especializada em planejamento tributário e contencioso fiscal. Atuamos com foco preventivo em consultoria jurídica, contratos, gestão de riscos e atuação contenciosa, assegurando soluções eficazes e protegendo seus interesses.'
     },
     {
       icon: <FaHandshake style={{ fontSize: '2.5rem', marginBottom: '1rem', color: theme.palette.secondary.main }} />,
       title: 'Direito de Família e Sucessões',
-      description: 'Soluções jurídicas com sensibilidade e estratégia para proteger o que realmente importa.\n\nOferecemos assessoria especializada em divórcios, inventários e planejamento sucessório. Atuamos com foco em soluções estratégicas e personalizadas, garantindo a melhor estrutura patrimonial para sua família.'
+      description: 'Soluções jurídicas com sensibilidade e estratégia para proteger o que realmente importa.\n\nOferecemos assessoria especializada em divórcios, inventários e planejamento sucessório. Atuamos com foco preventivo em consultoria jurídica, contratos, gestão de riscos e atuação contenciosa, assegurando soluções eficazes e protegendo seus interesses.'
     },
     {
       icon: <FaUserTie style={{ fontSize: '2.5rem', marginBottom: '1rem', color: theme.palette.secondary.main }} />,
       title: 'Direito do Trabalho',
-      description: 'Reduza riscos trabalhistas e preserve sua empresa.\n\nOferecemos assessoria especializada em contratos e rotinas trabalhistas. Atuamos com foco em soluções estratégicas e personalizadas, garantindo a melhor estrutura trabalhista para o seu negócio.'
+      description: 'Reduza riscos trabalhistas e preserve sua empresa.\n\nOferecemos assessoria especializada em contratos e rotinas trabalhistas. Atuamos com foco preventivo em consultoria jurídica, contratos, gestão de riscos e atuação contenciosa, assegurando soluções eficazes e protegendo seus interesses.'
     },
     {
       icon: <FaFileContract style={{ fontSize: '2.5rem', marginBottom: '1rem', color: theme.palette.secondary.main }} />,
       title: 'Direito Societário',
-      description: 'Estruture sua empresa com segurança jurídica e visão estratégica.\n\nOferecemos assessoria especializada em constituição societária e acordos de acionistas. Atuamos com foco em soluções estratégicas e personalizadas, garantindo a melhor estrutura societária para o seu negócio.'
+      description: 'Estruture sua empresa com segurança jurídica e visão estratégica.\n\nOferecemos assessoria especializada em constituição societária e acordos de acionistas. Atuamos com foco preventivo em consultoria jurídica, contratos, gestão de riscos e atuação contenciosa, assegurando soluções eficazes e protegendo seus interesses.'
     }
   ];
 
