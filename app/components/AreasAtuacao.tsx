@@ -147,7 +147,7 @@ const AreasAtuacao = () => {
                     sx={{
                       fontFamily: theme.typography.h6.fontFamily,
                       fontWeight: 600,
-                      color: theme.palette.primary.main,
+                      color: bordeauxColor,
                       mb: 1.5,
                     }}
                   >
