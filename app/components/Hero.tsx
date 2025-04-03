@@ -7,7 +7,6 @@ import { keyframes } from '@mui/system';
 
 const bordeauxColor = '#260d0d';
 // const darkBordeauxColor = '#1a0808'; // Não utilizado
-const lightBordeauxColor = '#491a1a';
 const blackColor = '#0A0A0A';
 
 const fadeIn = keyframes`
