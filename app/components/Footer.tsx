@@ -4,6 +4,9 @@ import Image from 'next/image';
 import { Box, Typography, Container, Grid, Link as MuiLink, Divider, useTheme } from '@mui/material';
 import { FaInstagram, FaPhone, FaEnvelope } from 'react-icons/fa';
 
+// Mesma cor bordô usada em outros componentes
+const bordeauxColor = '#260d0d';
+
 const Footer = () => {
   const year = new Date().getFullYear();
   const theme = useTheme();
@@ -12,7 +15,7 @@ const Footer = () => {
     <Box
       component="footer"
       sx={{
-        bgcolor: theme.palette.primary.main,
+        bgcolor: bordeauxColor,
         color: 'white',
         py: 6,
       }}
@@ -95,32 +98,34 @@ const Footer = () => {
           </Grid>
           
           <Grid item xs={12} md={4}>
-            <Typography variant="h6" fontFamily={theme.typography.h6.fontFamily} fontWeight={600} mb={3}>
-              Links Rápidos
-            </Typography>
-            <Box component="ul" sx={{ listStyle: 'none', padding: 0, margin: 0 }}>
-              {[
-                { title: 'Home', id: 'home' },
-                { title: 'Áreas de Atuação', id: 'atuacao' },
-                { title: 'Sobre Nós', id: 'sobre' },
-                { title: 'Depoimentos', id: 'depoimentos' },
-                { title: 'Planejamento', id: 'planejamento' },
-                { title: 'Contato', id: 'contato' }
-              ].map((link, index) => (
-                <Box component="li" key={index} mb={1}>
-                  <MuiLink
-                    href={`#${link.id}`}
-                    underline="none"
-                    sx={{
-                      color: 'grey.300',
-                      '&:hover': { color: theme.palette.secondary.light },
-                      transition: 'color 0.3s ease',
-                    }}
-                  >
-                    {link.title}
-                  </MuiLink>
-                </Box>
-              ))}
+            <Box sx={{ bgcolor: bordeauxColor, p: 3, borderRadius: 1 }}>
+              <Typography variant="h6" fontFamily={theme.typography.h6.fontFamily} fontWeight={600} mb={3}>
+                Links Rápidos
+              </Typography>
+              <Box component="ul" sx={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                {[
+                  { title: 'Home', id: 'home' },
+                  { title: 'Áreas de Atuação', id: 'atuacao' },
+                  { title: 'Sobre Nós', id: 'sobre' },
+                  { title: 'Depoimentos', id: 'depoimentos' },
+                  { title: 'Planejamento', id: 'planejamento' },
+                  { title: 'Contato', id: 'contato' }
+                ].map((link, index) => (
+                  <Box component="li" key={index} mb={1}>
+                    <MuiLink
+                      href={`#${link.id}`}
+                      underline="none"
+                      sx={{
+                        color: 'grey.300',
+                        '&:hover': { color: theme.palette.secondary.light },
+                        transition: 'color 0.3s ease',
+                      }}
+                    >
+                      {link.title}
+                    </MuiLink>
+                  </Box>
+                ))}
+              </Box>
             </Box>
           </Grid>
           

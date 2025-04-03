@@ -4,6 +4,9 @@ import { motion } from 'framer-motion';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaInstagram } from 'react-icons/fa';
 import { Box, Typography, Container, Grid, Card, CardContent, Button, TextField, useTheme, Divider } from '@mui/material';
 
+// Mesma cor bordô usada em outros componentes
+const bordeauxColor = '#260d0d';
+
 const Contato = () => {
   const theme = useTheme();
   
@@ -196,7 +199,7 @@ const Contato = () => {
                 sx={{ 
                   borderRadius: 1, 
                   height: '100%',
-                  bgcolor: theme.palette.primary.main,
+                  bgcolor: bordeauxColor,
                   color: 'white',
                 }}
               >

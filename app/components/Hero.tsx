@@ -80,8 +80,10 @@ const Hero = () => {
       component="section"
       sx={{
         position: 'relative',
-        height: '100vh',
-        minHeight: '600px',
+        height: { xs: 'auto', md: '100vh' },
+        minHeight: { xs: '90vh', md: '600px' },
+        paddingTop: { xs: '80px', md: '0' },
+        paddingBottom: { xs: '60px', md: '0' },
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -121,7 +123,7 @@ const Hero = () => {
           zIndex: 1,
           pointerEvents: 'none',
         },
-        mt: { xs: '-60px', md: '-70px' }, // Compensa o padding-top adicionado ao main
+        mt: { xs: '0', md: '0' },
       }}
     >
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2, pt: { xs: 8, md: 0 } }}>
@@ -156,7 +158,12 @@ const Hero = () => {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.8 }}
               >
-                {heroTexts[currentTextIndex].title}
+                {heroTexts[currentTextIndex].title === "Por que escolher a D&R Advocacia" 
+                  ? <span>Por que escolher a D<span style={{ fontFamily: 'serif' }}>&</span>R Advocacia</span>
+                  : heroTexts[currentTextIndex].title === "O Que Faz da D&R uma Escolha Inteligente"
+                  ? <span>O Que Faz da D<span style={{ fontFamily: 'serif' }}>&</span>R uma Escolha Inteligente</span>
+                  : heroTexts[currentTextIndex].title
+                }
               </motion.div>
             </AnimatePresence>
           </Typography>
@@ -205,14 +212,21 @@ const Hero = () => {
           </Box>
           
           {/* Indicadores para mostrar qual slide está ativo */}
-          <Box sx={{ display: 'flex', gap: 1, mb: 4, justifyContent: 'center' }}>
+          <Box sx={{ 
+            display: 'flex', 
+            gap: 1, 
+            mb: 4, 
+            justifyContent: 'center',
+            position: 'relative',
+            zIndex: 5
+          }}>
             {heroTexts.map((_, index) => (
               <Box
                 key={index}
                 onClick={() => setCurrentTextIndex(index)}
                 sx={{
-                  width: '10px',
-                  height: '10px',
+                  width: { xs: '12px', md: '10px' },
+                  height: { xs: '12px', md: '10px' },
                   borderRadius: '50%',
                   backgroundColor: index === currentTextIndex ? theme.palette.secondary.light : alpha('#fff', 0.5),
                   cursor: 'pointer',
@@ -225,7 +239,11 @@ const Hero = () => {
           <Stack
             direction={{ xs: 'column', sm: 'row' }}
             spacing={2}
-            sx={{ mt: 2 }}
+            sx={{ 
+              mt: 2,
+              position: 'relative',
+              zIndex: 5
+            }}
           >
             <Button
               variant="contained"
@@ -274,6 +292,7 @@ const Hero = () => {
           width: '100%',
           overflow: 'hidden',
           zIndex: 3,
+          display: { xs: 'none', md: 'block' }
         }}
       >
         <Box 

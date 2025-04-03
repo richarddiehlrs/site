@@ -4,6 +4,9 @@ import { motion } from 'framer-motion';
 import { FaBuilding, FaHandshake, FaUserTie, FaBriefcase, FaCalculator, FaFileContract } from 'react-icons/fa';
 import { Box, Typography, Container, Grid, Paper, useTheme } from '@mui/material';
 
+// Mesma cor bordô usada em outros componentes
+const bordeauxColor = '#260d0d';
+
 const AreasAtuacao = () => {
   const theme = useTheme();
   
@@ -63,7 +66,7 @@ const AreasAtuacao = () => {
             sx={{
               fontFamily: theme.typography.h2.fontFamily,
               fontWeight: 700,
-              color: theme.palette.primary.main,
+              color: bordeauxColor,
               mb: 2,
             }}
           >

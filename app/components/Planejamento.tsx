@@ -4,27 +4,31 @@ import { motion } from 'framer-motion';
 import { FaLightbulb, FaFileAlt, FaChartLine, FaShieldAlt } from 'react-icons/fa';
 import { Box, Typography, Container, Grid, Card, CardContent, useTheme, Avatar, alpha } from '@mui/material';
 
+// Mesma cor bordô usada no Header e outras seções
+const bordeauxColor = '#260d0d';
+const lightBordeauxColor = '#491a1a';
+
 const Planejamento = () => {
   const theme = useTheme();
   
   const steps = [
     {
-      icon: <FaLightbulb style={{ fontSize: '1.75rem', color: 'white' }} />,
+      icon: <FaLightbulb style={{ fontSize: '1.75rem' }} />,
       title: 'Diagnóstico Jurídico Personalizado',
       description: 'Identificamos riscos ocultos e oportunidades estratégicas com base em uma análise profunda da sua realidade empresarial ou patrimonial.'
     },
     {
-      icon: <FaFileAlt style={{ fontSize: '1.75rem', color: 'white' }} />,
+      icon: <FaFileAlt style={{ fontSize: '1.75rem' }} />,
       title: 'Estratégia Jurídica Sob Medida',
       description: 'Desenhamos um plano jurídico totalmente alinhado aos seus objetivos, protegendo você e sua empresa com inteligência e antecipação.'
     },
     {
-      icon: <FaChartLine style={{ fontSize: '1.75rem', color: 'white' }} />,
+      icon: <FaChartLine style={{ fontSize: '1.75rem' }} />,
       title: 'Execução com Acompanhamento Inteligente',
       description: 'Implementamos a estratégia traçada e ajustamos o plano de ação conforme os resultados, garantindo eficiência e segurança contínua.'
     },
     {
-      icon: <FaShieldAlt style={{ fontSize: '1.75rem', color: 'white' }} />,
+      icon: <FaShieldAlt style={{ fontSize: '1.75rem' }} />,
       title: 'Blindagem e Segurança Jurídica',
       description: 'Cuidamos da regularidade legal e da proteção de tudo o que você construiu — para que você cresça com tranquilidade, sem surpresas.'
     }
@@ -36,8 +40,8 @@ const Planejamento = () => {
       component="section"
       sx={{
         py: 10,
-        color: 'white',
-        background: `linear-gradient(120deg, ${theme.palette.primary.main} 0%, #2c5364 100%)`,
+        color: theme.palette.text.primary,
+        background: 'white',
         position: 'relative',
         overflow: 'hidden',
         '&::before': {
@@ -49,7 +53,7 @@ const Planejamento = () => {
           height: '100%',
           backgroundImage: 'url("/images/pattern.png")',
           backgroundSize: '400px',
-          opacity: 0.05,
+          opacity: 0.03,
           zIndex: 1,
         },
       }}
@@ -68,7 +72,7 @@ const Planejamento = () => {
             sx={{
               fontFamily: theme.typography.h2.fontFamily,
               fontWeight: 700,
-              color: 'white',
+              color: bordeauxColor,
               mb: 2,
             }}
           >
@@ -78,7 +82,7 @@ const Planejamento = () => {
             sx={{
               width: '5rem',
               height: '0.25rem',
-              bgcolor: theme.palette.secondary.light,
+              bgcolor: theme.palette.secondary.main,
               mx: 'auto',
               mb: 3,
             }}
@@ -89,7 +93,7 @@ const Planejamento = () => {
               maxWidth: '600px',
               mx: 'auto',
               fontSize: '1.125rem',
-              color: alpha('#fff', 0.9),
+              color: theme.palette.text.secondary,
             }}
           >
             Blindamos empresas e patrimônios com inteligência jurídica, antecipando riscos e criando estruturas sólidas para decisões seguras e crescimento sustentável.
@@ -107,32 +111,33 @@ const Planejamento = () => {
                 style={{ height: '100%' }}
               >
                 <Card
-                  elevation={0}
+                  elevation={2}
                   sx={{
                     height: '100%',
-                    background: alpha('#fff', 0.08),
-                    backdropFilter: 'blur(8px)',
+                    background: bordeauxColor,
                     borderRadius: 1,
                     transition: 'all 0.3s ease',
+                    border: `1px solid ${alpha(bordeauxColor, 0.3)}`,
                     '&:hover': {
-                      background: alpha('#fff', 0.12),
                       transform: 'translateY(-5px)',
+                      boxShadow: `0 10px 30px ${alpha(bordeauxColor, 0.3)}`,
                     },
-                    border: `1px solid ${alpha('#fff', 0.1)}`,
                   }}
                 >
                   <CardContent sx={{ p: 4, textAlign: 'center' }}>
                     <Avatar
                       sx={{
-                        bgcolor: theme.palette.secondary.main,
+                        bgcolor: 'white',
                         width: 70,
                         height: 70,
                         mx: 'auto',
                         mb: 3,
-                        boxShadow: `0 0 20px ${alpha(theme.palette.secondary.main, 0.5)}`,
+                        boxShadow: `0 0 20px ${alpha('#000', 0.2)}`,
                       }}
                     >
-                      {step.icon}
+                      <Box sx={{ color: theme.palette.secondary.main }}>
+                        {step.icon}
+                      </Box>
                     </Avatar>
                     <Typography
                       variant="h5"
@@ -149,7 +154,7 @@ const Planejamento = () => {
                     <Typography
                       variant="body2"
                       sx={{
-                        color: alpha('#fff', 0.8),
+                        color: alpha('#ffffff', 0.9),
                         lineHeight: 1.6,
                       }}
                     >
@@ -170,14 +175,17 @@ const Planejamento = () => {
           style={{ marginTop: '4rem', textAlign: 'center' }}
         >
           <Card
-            elevation={0}
+            elevation={2}
             sx={{
               py: 4,
               px: 6,
-              background: alpha('#fff', 0.05),
-              backdropFilter: 'blur(8px)',
+              background: 'white',
               borderRadius: 1,
-              border: `1px solid ${alpha('#fff', 0.1)}`,
+              border: `1px solid ${alpha(bordeauxColor, 0.15)}`,
+              width: '100%',
+              maxWidth: '900px',
+              mx: 'auto',
+              boxShadow: `0 10px 30px ${alpha(bordeauxColor, 0.1)}`,
             }}
           >
             <Typography
@@ -186,7 +194,7 @@ const Planejamento = () => {
                 maxWidth: '900px',
                 mx: 'auto',
                 fontSize: '1.125rem',
-                color: alpha('#fff', 0.9),
+                color: theme.palette.text.secondary,
                 lineHeight: 1.7,
               }}
             >
@@ -197,7 +205,7 @@ const Planejamento = () => {
                   fontSize: '1.4rem',
                   fontWeight: 700,
                   mb: 1,
-                  color: 'white',
+                  color: bordeauxColor,
                 }}
               >
                 Na D&R Advocacia, planejamento jurídico estratégico não é apenas prevenção.
@@ -209,7 +217,7 @@ const Planejamento = () => {
                   fontSize: '1.2rem',
                   fontWeight: 600,
                   mb: 1.5,
-                  color: theme.palette.secondary.light,
+                  color: theme.palette.secondary.main,
                 }}
               >
                 É o que garante que você tome decisões com segurança, proteja o que já construiu e cresça com confiança.
@@ -226,14 +234,17 @@ const Planejamento = () => {
           style={{ marginTop: '2rem', textAlign: 'center' }}
         >
           <Card
-            elevation={0}
+            elevation={2}
             sx={{
               py: 4,
               px: 6,
-              background: alpha(theme.palette.secondary.main, 0.1),
-              backdropFilter: 'blur(8px)',
+              background: alpha(bordeauxColor, 0.03),
               borderRadius: 1,
-              border: `1px solid ${alpha(theme.palette.secondary.main, 0.2)}`,
+              border: `1px solid ${alpha(bordeauxColor, 0.15)}`,
+              width: '100%',
+              maxWidth: '900px',
+              mx: 'auto',
+              boxShadow: `0 10px 30px ${alpha(bordeauxColor, 0.08)}`,
             }}
           >
             <Typography
@@ -242,7 +253,7 @@ const Planejamento = () => {
                 maxWidth: '900px',
                 mx: 'auto',
                 fontSize: '1.125rem',
-                color: alpha('#fff', 0.95),
+                color: theme.palette.text.secondary,
                 lineHeight: 1.7,
               }}
             >
@@ -253,7 +264,7 @@ const Planejamento = () => {
                   fontSize: '1.4rem',
                   fontWeight: 700,
                   mb: 1,
-                  color: 'white',
+                  color: bordeauxColor,
                 }}
               >
                 Você está pronto para tomar decisões com segurança e crescer com tranquilidade?
@@ -265,7 +276,7 @@ const Planejamento = () => {
                   fontSize: '1.2rem',
                   fontWeight: 600,
                   mb: 1.5,
-                  color: theme.palette.secondary.light,
+                  color: theme.palette.secondary.main,
                 }}
               >
                 Aqui, você não será mais um processo. Será um projeto estratégico.
