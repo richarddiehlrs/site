@@ -43,7 +43,6 @@ const Footer = () => {
                 width={240}
                 height={67}
                 style={{ 
-                  filter: 'brightness(0) invert(1)',
                   marginBottom: '0.5rem'
                 }}
                 priority

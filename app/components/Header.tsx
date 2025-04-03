@@ -98,7 +98,6 @@ const Header = () => {
                 width={220}
                 height={62}
                 style={{ 
-                  filter: 'brightness(0) invert(1)',
                   transition: 'filter 0.3s ease',
                 }}
                 priority
@@ -175,7 +174,6 @@ const Header = () => {
                 width={180}
                 height={50}
                 style={{ 
-                  filter: 'brightness(0) invert(1)',
                   transition: 'filter 0.3s ease',
                 }}
                 priority
