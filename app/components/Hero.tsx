@@ -217,19 +217,25 @@ const Hero = () => {
             mb: 4, 
             justifyContent: 'center',
             position: 'relative',
-            zIndex: 5
+            zIndex: 10
           }}>
             {heroTexts.map((_, index) => (
               <Box
                 key={index}
                 onClick={() => setCurrentTextIndex(index)}
                 sx={{
-                  width: { xs: '12px', md: '10px' },
-                  height: { xs: '12px', md: '10px' },
+                  width: { xs: '14px', md: '12px' },
+                  height: { xs: '14px', md: '12px' },
                   borderRadius: '50%',
-                  backgroundColor: index === currentTextIndex ? theme.palette.secondary.light : alpha('#fff', 0.5),
+                  backgroundColor: index === currentTextIndex ? theme.palette.secondary.main : alpha('#fff', 0.5),
+                  border: '1px solid rgba(255,255,255,0.3)',
                   cursor: 'pointer',
-                  transition: 'all 0.3s ease'
+                  transition: 'all 0.3s ease',
+                  WebkitTransition: 'all 0.3s ease',
+                  WebkitBackfaceVisibility: 'hidden',
+                  '&:hover': {
+                    transform: 'scale(1.2)',
+                  }
                 }}
               />
             ))}
@@ -241,7 +247,7 @@ const Hero = () => {
             sx={{ 
               mt: 2,
               position: 'relative',
-              zIndex: 5
+              zIndex: 10
             }}
           >
             <Button
@@ -253,8 +259,11 @@ const Hero = () => {
                 px: 4,
                 fontSize: '1rem',
                 bgcolor: bordeauxColor,
+                boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+                WebkitBackfaceVisibility: 'hidden',
                 '&:hover': {
                   bgcolor: alpha(bordeauxColor, 0.8),
+                  boxShadow: '0 6px 12px rgba(0,0,0,0.3)',
                 },
               }}
             >
@@ -269,10 +278,12 @@ const Hero = () => {
                 px: 4,
                 fontSize: '1rem',
                 color: 'white',
-                borderColor: alpha(bordeauxColor, 0.6),
+                borderColor: alpha('#fff', 0.6),
+                borderWidth: '2px',
+                WebkitBackfaceVisibility: 'hidden',
                 '&:hover': {
-                  borderColor: bordeauxColor,
-                  backgroundColor: alpha(bordeauxColor, 0.1),
+                  borderColor: '#fff',
+                  backgroundColor: alpha('#fff', 0.1),
                 },
               }}
             >
