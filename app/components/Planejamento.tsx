@@ -28,8 +28,23 @@ const Planejamento = () => {
     },
     {
       icon: <FaShieldAlt style={{ fontSize: '1.75rem' }} />,
-      title: 'Blindagem e Segurança Jurídica',
+      title: 'Proteção e Segurança Jurídica',
       description: 'Cuidamos da regularidade legal e da proteção de tudo o que você construiu — para que você cresça com tranquilidade, sem surpresas.'
+    }
+  ];
+
+  const servicos = [
+    {
+      title: 'Proteção e Segurança Jurídica',
+      description: 'Implementamos estratégias personalizadas para proteger seu patrimônio, com foco em estruturas societárias seguras e planejamento tributário eficiente.'
+    },
+    {
+      title: 'Planejamento Tributário',
+      description: 'Desenvolvemos estratégias legais para reduzir a carga tributária, garantindo conformidade fiscal e otimização de recursos.'
+    },
+    {
+      title: 'Consultoria Empresarial',
+      description: 'Oferecemos orientação estratégica para tomada de decisões, com foco em crescimento sustentável e redução de riscos.'
     }
   ];
 
@@ -95,7 +110,7 @@ const Planejamento = () => {
               color: theme.palette.secondary.main,
             }}
           >
-            Blindamos empresas e patrimônios com inteligência jurídica, antecipando riscos e criando estruturas sólidas para decisões seguras e crescimento sustentável.
+            Protegemos empresas e patrimônios com inteligência jurídica, antecipando riscos e criando estruturas sólidas para decisões seguras e crescimento sustentável.
           </Typography>
         </motion.div>
 
@@ -135,7 +150,7 @@ const Planejamento = () => {
                       }}
                     >
                       <Box sx={{ color: theme.palette.secondary.main }}>
-                        {step.icon}
+                      {step.icon}
                       </Box>
                     </Avatar>
                     <Typography
