@@ -81,7 +81,7 @@ const Sobre = () => {
                 color: theme.palette.secondary.light
               }}
             >
-              Especialistas em Advocacia Empresarial e Blindagem Patrimonial
+              Especialistas em Advocacia Empresarial e Proteção Patrimonial
             </Typography>
             Conheça os profissionais por trás da D&R, com experiência sólida e visão estratégica para proteger seu patrimônio e impulsionar seu crescimento.
           </Typography>
