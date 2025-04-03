@@ -101,7 +101,16 @@ const Depoimentos = () => {
             >
               A visão de quem confia em nosso trabalho
             </Typography>
-            Conheça a experiência de clientes que transformaram seus negócios com nossa advocacia estratégica e proteção patrimonial.
+            <Typography
+              component="span"
+              sx={{
+                color: theme.palette.secondary.main,
+                fontWeight: 500,
+                display: 'block'
+              }}
+            >
+              Conheça a experiência de clientes que transformaram seus negócios com nossa advocacia estratégica e proteção patrimonial.
+            </Typography>
           </Typography>
         </motion.div>
 

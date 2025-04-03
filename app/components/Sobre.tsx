@@ -138,7 +138,7 @@ const Sobre = () => {
                         mb: 1
                       }}
                     >
-                      Dr. Daniel Rolim
+                      Daniel Rolim
                     </Typography>
                     <Typography 
                       variant="subtitle1"
@@ -148,10 +148,10 @@ const Sobre = () => {
                         mb: 2
                       }}
                     >
-                      Advogado OAB/RS ...
+                      Advogado OAB/RS 108.354
                     </Typography>
                     <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
-                      Graduado em Direito pela Universidade Federal do Rio Grande do Sul (UFRGS), com especialização em Direito Empresarial e Tributário pela PUC-RS.
+                      Graduado em Direito pela Pontifícia Universidade Católica do Rio Grande do Sul (PUC-RS), com especialização em Direito Empresarial e Tributário pela PUC-RS.
                     </Typography>
                     <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
                       Possui mais de 15 anos de experiência na área jurídica, tendo atuado em grandes escritórios de advocacia antes de fundar a D&R Advocacia.
@@ -215,7 +215,7 @@ const Sobre = () => {
                         mb: 1
                       }}
                     >
-                      Dra. Jessica Diehl
+                      Dra. Jéssica Diehl
                     </Typography>
                     <Typography 
                       variant="subtitle1"
@@ -225,13 +225,13 @@ const Sobre = () => {
                         mb: 2
                       }}
                     >
-                      Advogada OAB/RS ....
+                      Advogada OAB/RS 100.015
                     </Typography>
                     <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
-                      Graduada em Direito pela Pontifícia Universidade Católica do Rio Grande do Sul (PUC-RS), com especialização em Direito Civil e Processual Civil.
+                      Graduada em Direito pela Pontifícia Universidade Católica do Rio Grande do Sul (PUC-RS), com especialização em Direito Societário pela FBT.
                     </Typography>
                     <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
-                      Possui experiência de mais de 10 anos na advocacia, com atuação destacada em casos de Direito de Família, Sucessões e Direito Imobiliário.
+                      Possui experiência de mais de 10 anos na advocacia, com atuação destacada em Direito Tributário, Patrimonial e Sucessório.
                     </Typography>
                     <Typography variant="body1" color="text.secondary">
                       Reconhecida por sua abordagem humanizada e atendimento personalizado, busca sempre as melhores soluções para seus clientes, seja por meio de acordos ou pela via judicial.

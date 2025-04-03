@@ -101,7 +101,16 @@ const AreasAtuacao = () => {
             >
               Soluções Jurídicas que Protegem o que Importa
             </Typography>
-            Oferecemos assessoria estratégica nas principais áreas do Direito, com foco em blindagem patrimonial, prevenção de riscos e crescimento com segurança.
+            <Typography
+              component="span"
+              sx={{
+                color: theme.palette.secondary.main,
+                fontWeight: 500,
+                display: 'block'
+              }}
+            >
+              Oferecemos assessoria estratégica nas principais áreas do Direito, com foco em blindagem patrimonial, prevenção de riscos e crescimento com segurança.
+            </Typography>
           </Typography>
         </motion.div>
 
