@@ -33,21 +33,6 @@ const Planejamento = () => {
     }
   ];
 
-  const servicos = [
-    {
-      title: 'Proteção e Segurança Jurídica',
-      description: 'Implementamos estratégias personalizadas para proteger seu patrimônio, com foco em estruturas societárias seguras e planejamento tributário eficiente.'
-    },
-    {
-      title: 'Planejamento Tributário',
-      description: 'Desenvolvemos estratégias legais para reduzir a carga tributária, garantindo conformidade fiscal e otimização de recursos.'
-    },
-    {
-      title: 'Consultoria Empresarial',
-      description: 'Oferecemos orientação estratégica para tomada de decisões, com foco em crescimento sustentável e redução de riscos.'
-    }
-  ];
-
   return (
     <Box
       id="planejamento"
