@@ -215,7 +215,7 @@ const Sobre = () => {
                         mb: 1
                       }}
                     >
-                      Dra. Jéssica Diehl
+                      Jéssica Diehl
                     </Typography>
                     <Typography 
                       variant="subtitle1"
