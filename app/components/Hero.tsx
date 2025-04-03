@@ -255,7 +255,7 @@ const Hero = () => {
                 fontSize: '1rem',
                 bgcolor: bordeauxColor,
                 '&:hover': {
-                  bgcolor: lightBordeauxColor,
+                  bgcolor: alpha(bordeauxColor, 0.8),
                 },
               }}
             >

@@ -6,7 +6,6 @@ import { Box, Typography, Container, Grid, Card, CardContent, useTheme, Avatar, 
 
 // Mesma cor bordô usada no Header e outras seções
 const bordeauxColor = '#260d0d';
-const lightBordeauxColor = '#491a1a';
 
 const Planejamento = () => {
   const theme = useTheme();
