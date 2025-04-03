@@ -2,11 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Box, Typography, Container, Button, Stack, useTheme, alpha } from '@mui/material';
-import { keyframes } from '@mui/system';
+import { Box, Typography, Container, Button, useTheme } from '@mui/material';
+import { keyframes } from '@emotion/react';
+import { alpha } from '@mui/material/styles';
 
 const bordeauxColor = '#260d0d';
-// const darkBordeauxColor = '#1a0808'; // Não utilizado
 const blackColor = '#0A0A0A';
 
 const fadeIn = keyframes`
