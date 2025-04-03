@@ -6,7 +6,7 @@ import { Box, Typography, Container, Button, Stack, useTheme, alpha } from '@mui
 import { keyframes } from '@mui/system';
 
 const bordeauxColor = '#260d0d';
-const darkBordeauxColor = '#1a0808';
+// const darkBordeauxColor = '#1a0808'; // Não utilizado
 const lightBordeauxColor = '#491a1a';
 const blackColor = '#0A0A0A';
 
@@ -21,14 +21,14 @@ const fadeIn = keyframes`
   }
 `;
 
-const shimmer = keyframes`
-  0% {
-    background-position: -100% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-`;
+// const shimmer = keyframes`
+//   0% {
+//     background-position: -100% 0;
+//   }
+//   100% {
+//     background-position: 200% 0;
+//   }
+// `;
 
 // Array com todos os textos que serão alternados
 const heroTexts = [
