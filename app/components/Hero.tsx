@@ -34,22 +34,22 @@ const heroTexts = [
   {
     title: "Transformamos negócios com segurança jurídica.",
     content: [
-      "✅ Mais do que resolver problemas, blindamos o que você construiu e preparamos sua empresa — e seu patrimônio — para crescer com confiança e estratégia.",
-      "✅ Com atendimento personalizado, visão preventiva e foco em resultados, somos o parceiro jurídico que antecipa riscos e protege o que realmente importa para você — porque nascemos para ser referência nacional em advocacia empresarial estratégica."
+      "Mais do que resolver problemas, blindamos o que você construiu e preparamos sua empresa — e seu patrimônio — para crescer com confiança e estratégia.",
+      "Com atendimento personalizado, visão preventiva e foco em resultados, somos o parceiro jurídico que antecipa riscos e protege o que realmente importa para você — porque nascemos para ser referência nacional em advocacia empresarial estratégica."
     ]
   },
   {
     title: "O Que Faz da D&R uma Escolha Inteligente",
     content: [
-      "✅ Advocacia preventiva que evita problemas antes que aconteçam. Atuamos de forma estratégica para prevenir riscos jurídicos antes que se tornem conflitos ou processos — protegendo o patrimônio e o futuro do cliente.",
-      "✅ Atendimento personalizado que constrói confiança. Cada cliente é único. Nosso atendimento é próximo, contínuo e estratégico, com foco em relações duradouras."
+      "Advocacia preventiva que evita problemas antes que aconteçam. Atuamos de forma estratégica para prevenir riscos jurídicos antes que se tornem conflitos ou processos — protegendo o patrimônio e o futuro do cliente.",
+      "Atendimento personalizado que constrói confiança. Cada cliente é único. Nosso atendimento é próximo, contínuo e estratégico, com foco em relações duradouras."
     ]
   },
   {
     title: "Por que escolher a D&R Advocacia",
     content: [
-      "✅ Foco em educação jurídica que transforma conhecimento em poder. Empoderamos nossos clientes com conhecimento. Oferecemos conteúdos e orientações práticas para que estejam sempre um passo à frente.",
-      "✅ Multidisciplinaridade e estratégia integrada. Reunimos diferentes áreas do direito em um só lugar, com visão estratégica e soluções completas para empresas e famílias."
+      "Foco em educação jurídica que transforma conhecimento em poder. Empoderamos nossos clientes com conhecimento. Oferecemos conteúdos e orientações práticas para que estejam sempre um passo à frente.",
+      "Multidisciplinaridade e estratégia integrada. Reunimos diferentes áreas do direito em um só lugar, com visão estratégica e soluções completas para empresas e famílias."
     ]
   }
 ];
