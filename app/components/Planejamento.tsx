@@ -195,6 +195,7 @@ const Planejamento = () => {
                 fontSize: '1.125rem',
                 color: theme.palette.text.secondary,
                 lineHeight: 1.7,
+                fontFamily: theme.typography.body1.fontFamily,
               }}
             >
               <Typography
@@ -205,6 +206,7 @@ const Planejamento = () => {
                   fontWeight: 700,
                   mb: 1,
                   color: bordeauxColor,
+                  fontFamily: theme.typography.h4.fontFamily,
                 }}
               >
                 Na D&R Advocacia, planejamento jurídico estratégico não é apenas prevenção.
@@ -217,9 +219,23 @@ const Planejamento = () => {
                   fontWeight: 600,
                   mb: 1.5,
                   color: theme.palette.secondary.main,
+                  fontFamily: theme.typography.h5.fontFamily,
                 }}
               >
                 É o que garante que você tome decisões com segurança, proteja o que já construiu e cresça com confiança.
+              </Typography>
+              <Typography
+                component="span"
+                sx={{
+                  display: 'block',
+                  fontSize: '1.1rem',
+                  fontWeight: 500,
+                  mt: 2,
+                  color: theme.palette.text.secondary,
+                  fontFamily: theme.typography.body1.fontFamily,
+                }}
+              >
+                Fale com a D&R e veja como nosso atendimento consultivo pode proteger sua empresa e ampliar seus resultados.
               </Typography>
             </Typography>
           </Card>
