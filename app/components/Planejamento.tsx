@@ -93,6 +93,7 @@ const Planejamento = () => {
               mx: 'auto',
               fontSize: '1.125rem',
               color: theme.palette.secondary.main,
+              fontFamily: theme.typography.h4.fontFamily,
             }}
           >
             Protegemos empresas e patrimônios com inteligência jurídica, antecipando riscos e criando estruturas sólidas para decisões seguras e crescimento sustentável.
@@ -195,7 +196,7 @@ const Planejamento = () => {
                 fontSize: '1.125rem',
                 color: theme.palette.text.secondary,
                 lineHeight: 1.7,
-                fontFamily: theme.typography.body1.fontFamily,
+                fontFamily: theme.typography.h4.fontFamily,
               }}
             >
               <Typography
@@ -216,10 +217,10 @@ const Planejamento = () => {
                 sx={{
                   display: 'block',
                   fontSize: '1.2rem',
-                  fontWeight: 600,
+                  fontWeight: 500,
                   mb: 1.5,
                   color: theme.palette.secondary.main,
-                  fontFamily: theme.typography.h5.fontFamily,
+                  fontFamily: theme.typography.h4.fontFamily,
                 }}
               >
                 É o que garante que você tome decisões com segurança, proteja o que já construiu e cresça com confiança.
@@ -228,10 +229,11 @@ const Planejamento = () => {
                 component="span"
                 sx={{
                   display: 'block',
+                  fontSize: '1.2rem',
                   fontWeight: 500,
                   mt: 2,
                   color: bordeauxColor,
-                  fontFamily: theme.typography.body1.fontFamily,
+                  fontFamily: theme.typography.h4.fontFamily,
                 }}
               >
                 Fale com a D<span style={{ fontFamily: 'serif' }}>&</span>R e veja como nosso atendimento consultivo pode proteger sua empresa e ampliar seus resultados.
@@ -269,6 +271,7 @@ const Planejamento = () => {
                 fontSize: '1.125rem',
                 color: theme.palette.text.secondary,
                 lineHeight: 1.7,
+                fontFamily: theme.typography.h4.fontFamily,
               }}
             >
               <Typography
@@ -279,6 +282,7 @@ const Planejamento = () => {
                   fontWeight: 700,
                   mb: 1,
                   color: bordeauxColor,
+                  fontFamily: theme.typography.h4.fontFamily,
                 }}
               >
                 Você está pronto para tomar decisões com segurança e crescer com tranquilidade?
@@ -288,9 +292,10 @@ const Planejamento = () => {
                 sx={{
                   display: 'block',
                   fontSize: '1.2rem',
-                  fontWeight: 600,
+                  fontWeight: 500,
                   mb: 1.5,
                   color: theme.palette.secondary.main,
+                  fontFamily: theme.typography.h4.fontFamily,
                 }}
               >
                 Aqui, você não será mais um processo. Será um projeto estratégico.
@@ -298,8 +303,10 @@ const Planejamento = () => {
               <Typography
                 component="span"
                 sx={{
-                  color: bordeauxColor,
+                  fontSize: '1.2rem',
                   fontWeight: 500,
+                  color: bordeauxColor,
+                  fontFamily: theme.typography.h4.fontFamily,
                 }}
               >
                 Fale com a D<span style={{ fontFamily: 'serif' }}>&</span>R e veja como nosso atendimento consultivo pode proteger sua empresa e ampliar seus resultados.
