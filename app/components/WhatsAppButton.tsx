@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 // Número de WhatsApp com DDD - substitua pelo número correto
 const WHATSAPP_NUMBER = '5551997078004'; // Número correto: 55 (Brasil) + 51 (DDD) + 997078004
-const WHATSAPP_MESSAGE = 'Olá! Gostaria de saber mais sobre os serviços da D&R Advocacia.'.replace('D&R', 'D&R');
+const WHATSAPP_MESSAGE = 'Olá! Gostaria de saber mais sobre os serviços da D&R Advocacia.';
 
 const WhatsAppButton = () => {
   const [visible, setVisible] = useState(false);
