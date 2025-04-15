@@ -31,14 +31,19 @@ const fadeIn = keyframes`
 
 interface HeroText {
   title: string;
-  content: Array<string | { text: string; fontWeight?: number }>;
+  content: Array<string | { text: string; fontWeight?: number; color?: string }>;
 }
 
 const heroTexts: HeroText[] = [
   {
     title: "Transformamos negócios com segurança jurídica.",
     content: [
-      "Mais do que resolver problemas, protegemos o que você construiu e preparamos sua empresa — e seu patrimônio — para crescer com confiança e estratégia.",
+      "Mais do que resolver problemas, ",
+      {
+        text: "protegemos o que você construiu e preparamos sua empresa — e seu patrimônio — para crescer com confiança e estratégia",
+        color: blackColor
+      },
+      ".",
       "Com atendimento personalizado, visão preventiva e foco em resultados, somos o parceiro jurídico que antecipa riscos e protege o que realmente importa para você — porque nascemos para ser referência nacional em advocacia empresarial estratégica."
     ]
   },
@@ -213,6 +218,7 @@ const Hero = () => {
                         display: 'block',
                         mb: 2,
                         fontWeight: typeof content === 'object' ? content.fontWeight : 400,
+                        color: typeof content === 'object' ? content.color : undefined,
                       }}
                     >
                       {typeof content === 'object' ? content.text : content}
