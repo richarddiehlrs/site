@@ -1,210 +1,170 @@
 'use client';
 
-import { Box, Container, Typography, useTheme } from '@mui/material';
-import { alpha } from '@mui/material/styles';
+import React from 'react';
+import { Box, Typography, useTheme, useMediaQuery } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
 
-const bordeauxColor = '#260d0d';
-const blackColor = '#0A0A0A';
-const goldColor = '#E5B27E';
-
-// Função para formatar D&R corretamente
-const formatDRText = (text: string) => {
-  return text.replace('D&R', 'D\u00A0&\u00A0R');
-};
-
-interface Diferencial {
-  titulo: string;
-  descricao: string;
-  align: 'left' | 'right'
-}
-
-const diferenciais: Diferencial[] = [
-  {
-    titulo: "Advocacia preventiva que evita problemas antes que aconteçam",
-    descricao: "Atuamos de forma estratégica para prevenir riscos jurídicos antes que se tornem conflitos ou processos — protegendo o patrimônio e o futuro do cliente.",
-    align: 'left'
-  },
-  {
-    titulo: "Atendimento personalizado que constrói confiança",
-    descricao: "Cada cliente é único. Nosso atendimento é próximo, contínuo e estratégico, com foco em relações duradouras.",
-    align: 'right'
-  },
-  {
-    titulo: "Foco em educação jurídica que transforma conhecimento em poder",
-    descricao: "Empoderamos nossos clientes com conhecimento. Oferecemos conteúdos e orientações práticas para que estejam sempre um passo à frente.",
-    align: 'left'
-  },
-  {
-    titulo: "Multidisciplinaridade e estratégia integrada",
-    descricao: "Reunimos diferentes áreas do direito em um só lugar, com visão estratégica e soluções completas para empresas e famílias.",
-    align: 'right'
-  }
-];
-
-const Diferenciais = () => {
+const Diferenciais: React.FC = () => {
   const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isTablet = useMediaQuery(theme.breakpoints.down('md'));
+
+  const diferenciais = [
+    {
+      title: "Advocacia preventiva que evita problemas antes que aconteçam",
+      description: "Na D&R Advocacia, acreditamos que a melhor forma de resolver um problema é evitá-lo. Nossa abordagem preventiva identifica riscos jurídicos antes que se tornem problemas, protegendo seu patrimônio e sua empresa.",
+      align: 'right'
+    },
+    {
+      title: "Atendimento personalizado que constrói confiança",
+      description: "Cada cliente é único, e por isso oferecemos um atendimento personalizado e próximo. Nossa equipe está sempre disponível para entender suas necessidades e oferecer soluções jurídicas sob medida.",
+      align: 'left'
+    },
+    {
+      title: "Foco em educação jurídica que transforma conhecimento em poder",
+      description: "Além de oferecer soluções jurídicas, nos dedicamos a educar nossos clientes sobre seus direitos e obrigações. O conhecimento jurídico é uma ferramenta poderosa para a tomada de decisões estratégicas.",
+      align: 'right'
+    },
+    {
+      title: "Multidisciplinaridade e estratégia integrada",
+      description: "Nossa equipe multidisciplinar combina expertise em diferentes áreas do Direito para oferecer soluções integradas e completas. Trabalhamos em conjunto para proteger seus interesses de forma abrangente.",
+      align: 'left'
+    }
+  ];
 
   return (
     <Box
-      component="section"
       sx={{
-        py: { xs: 10, md: 15 },
-        backgroundColor: blackColor,
+        py: { xs: 6, md: 8 },
+        px: { xs: 2, sm: 4, md: 6 },
+        backgroundColor: theme.palette.background.default,
         position: 'relative',
-        overflow: 'hidden',
-        borderTop: '1px solid #333',
-        borderBottom: '1px solid #333'
+        overflow: 'hidden'
       }}
     >
-      <Container maxWidth="lg">
+      {/* Linhas decorativas */}
+      <Box
+        sx={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '1px',
+          background: `linear-gradient(to right, transparent, ${theme.palette.primary.main}, transparent)`,
+          opacity: 0.3
+        }}
+      />
+      <Box
+        sx={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: '1px',
+          background: `linear-gradient(to right, transparent, ${theme.palette.primary.main}, transparent)`,
+          opacity: 0.3
+        }}
+      />
+
+      <Box
+        sx={{
+          maxWidth: '1200px',
+          mx: 'auto',
+          position: 'relative'
+        }}
+      >
         <Typography
           variant="h2"
-          component="h2"
           sx={{
-            color: 'white',
-            fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
+            fontSize: { xs: '1.8rem', sm: '2.2rem', md: '2.5rem' },
             fontWeight: 700,
             textAlign: 'center',
-            mb: { xs: 10, md: 12 },
-            textTransform: 'uppercase',
-            letterSpacing: '0.05em',
-            position: 'relative',
-            fontFamily: theme.typography.h4.fontFamily,
-            '&::after': {
-              content: '""',
-              position: 'absolute',
-              bottom: '-20px',
-              left: 0,
-              width: '100%',
-              height: '2px',
-              background: goldColor
-            }
+            mb: { xs: 4, md: 6 },
+            color: theme.palette.text.primary,
+            fontFamily: theme.typography.h4.fontFamily
           }}
         >
-          O QUE FAZ DA <span style={{ fontFamily: 'serif' }}>D&R</span> UMA ESCOLHA INTELIGENTE
+          Nossos Diferenciais
         </Typography>
 
         <Box
           sx={{
-            width: '100%',
-            position: 'relative',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: { xs: 4, md: 6 }
           }}
         >
-          {/* Linha central */}
-          <Box 
-            sx={{
-              position: 'absolute',
-              top: 0,
-              bottom: 0,
-              left: '50%',
-              width: '2px',
-              background: goldColor,
-              transform: 'translateX(-50%)',
-              display: { xs: 'none', md: 'block' },
-              zIndex: 0
-            }}
-          />
-
           {diferenciais.map((diferencial, index) => (
             <Box
               key={index}
               sx={{
                 display: 'flex',
-                width: '100%',
+                flexDirection: { xs: 'column', sm: 'row' },
+                alignItems: { xs: 'center', sm: 'flex-start' },
+                gap: { xs: 2, sm: 3 },
                 position: 'relative',
-                mt: 6,
-                mb: 6,
-                justifyContent: diferencial.align === 'right' ? 'flex-end' : 'flex-start',
+                ml: { sm: diferencial.align === 'left' ? 0 : 'auto' },
+                mr: { sm: diferencial.align === 'right' ? 0 : 'auto' },
+                maxWidth: { sm: '80%' }
               }}
             >
               <Box
                 sx={{
-                  width: '45%',
-                  position: 'relative',
-                  zIndex: 1,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 2,
+                  order: { xs: 1, sm: diferencial.align === 'right' ? 2 : 1 }
                 }}
               >
-                {/* Linha horizontal */}
                 <Box
                   sx={{
-                    position: 'absolute',
-                    top: '50%',
-                    [diferencial.align === 'right' ? 'left' : 'right']: '-10%',
-                    width: '10%',
-                    height: '2px',
-                    background: goldColor,
-                    transform: 'translateY(-50%)',
-                    zIndex: 0
+                    width: { xs: '40px', sm: '50px' },
+                    height: { xs: '40px', sm: '50px' },
+                    borderRadius: '50%',
+                    backgroundColor: theme.palette.primary.main,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
                   }}
-                />
-                
-                <Box>
-                  <Box
+                >
+                  <CheckIcon sx={{ color: 'white', fontSize: { xs: '1.3rem', sm: '1.5rem' } }} />
+                </Box>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 1,
+                    maxWidth: '400px',
+                    textAlign: { xs: 'center', sm: diferencial.align }
+                  }}
+                >
+                  <Typography
+                    variant="h3"
                     sx={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      flexDirection: diferencial.align === 'right' ? 'row' : 'row-reverse',
-                      justifyContent: diferencial.align === 'right' ? 'flex-start' : 'flex-end',
-                      mb: 2,
+                      fontSize: { xs: '1rem', sm: '1.1rem', md: '1.2rem' },
+                      fontWeight: 600,
+                      color: theme.palette.text.primary,
+                      fontFamily: theme.typography.h4.fontFamily
                     }}
                   >
-                    <Typography
-                      variant="h5"
-                      sx={{
-                        color: goldColor,
-                        fontSize: { xs: '1.5rem', md: '1.75rem' },
-                        fontWeight: 600,
-                        fontFamily: theme.typography.h4.fontFamily,
-                        lineHeight: 1.4,
-                        background: blackColor,
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: 1
-                      }}
-                    >
-                      {diferencial.titulo}
-                      <Box
-                        sx={{
-                          width: 35,
-                          height: 35,
-                          borderRadius: '50%',
-                          backgroundColor: goldColor,
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          flexShrink: 0
-                        }}
-                      >
-                        <CheckIcon 
-                          sx={{ 
-                            color: blackColor,
-                            fontSize: '1.25rem'
-                          }} 
-                        />
-                      </Box>
-                    </Typography>
-                  </Box>
+                    {diferencial.title}
+                  </Typography>
                   <Typography
                     sx={{
-                      color: alpha('#fff', 0.95),
-                      fontSize: { xs: '0.95rem', md: '1rem' },
-                      lineHeight: 1.8,
-                      textAlign: diferencial.align === 'right' ? 'left' : 'right',
-                      fontWeight: 300,
-                      maxWidth: '400px',
-                      marginLeft: diferencial.align === 'right' ? 0 : 'auto',
-                      marginRight: diferencial.align === 'right' ? 'auto' : 0,
+                      fontSize: { xs: '0.85rem', sm: '0.9rem' },
+                      color: theme.palette.text.secondary,
+                      lineHeight: 1.6
                     }}
                   >
-                    {diferencial.descricao}
+                    {diferencial.description}
                   </Typography>
                 </Box>
               </Box>
             </Box>
           ))}
         </Box>
-      </Container>
+      </Box>
     </Box>
   );
 };
