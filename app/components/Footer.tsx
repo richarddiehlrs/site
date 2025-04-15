@@ -40,8 +40,8 @@ const Footer = () => {
               <Image
                 src="/images/4ce7142d-36b2-42ed-ac5b-97103c248abd.png"
                 alt="D&R Advocacia Logo"
-                width={240}
-                height={67}
+                width={280}
+                height={78}
                 style={{ 
                   marginBottom: '0.5rem'
                 }}
