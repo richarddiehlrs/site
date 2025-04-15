@@ -41,23 +41,6 @@ const Header = () => {
   // Calcular altura do AppBar para padding do conteúdo
   const headerHeight = { xs: 70, md: 90 };
   
-  // Adicionar padding-top ao conteúdo principal
-  useEffect(() => {
-    const mainContent = document.getElementById('main-content');
-    if (mainContent) {
-      mainContent.style.paddingTop = window.innerWidth < 900 ? `${headerHeight.xs}px` : `${headerHeight.md}px`;
-    }
-    
-    const handleResize = () => {
-      if (mainContent) {
-        mainContent.style.paddingTop = window.innerWidth < 900 ? `${headerHeight.xs}px` : `${headerHeight.md}px`;
-      }
-    };
-    
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
