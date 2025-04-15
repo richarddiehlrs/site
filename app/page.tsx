@@ -22,8 +22,8 @@ export default function Home() {
         <Hero />
         <AreasAtuacao />
         <Diferenciais />
-        <Planejamento />
         <Sobre />
+        <Planejamento />
         <Depoimentos />
         <Contato />
         <Footer />
