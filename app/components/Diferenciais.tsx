@@ -41,8 +41,8 @@ const Diferenciais: React.FC = () => {
         backgroundColor: bordeauxColor,
         position: 'relative',
         overflow: 'hidden',
-        borderTop: `1px solid ${alpha(goldColor, 0.3)}`,
-        borderBottom: `1px solid ${alpha(goldColor, 0.3)}`
+        borderTop: `3px solid ${goldColor}`,
+        borderBottom: `3px solid ${goldColor}`
       }}
     >
       {/* Linha central */}
@@ -52,8 +52,8 @@ const Diferenciais: React.FC = () => {
           top: 0,
           bottom: 0,
           left: '50%',
-          width: '2px',
-          background: alpha(goldColor, 0.5),
+          width: '4px',
+          background: goldColor,
           transform: 'translateX(-50%)',
           display: { xs: 'none', md: 'block' },
           zIndex: 0
@@ -84,7 +84,7 @@ const Diferenciais: React.FC = () => {
               bottom: '-20px',
               left: 0,
               width: '100%',
-              height: '2px',
+              height: '3px',
               background: goldColor
             }
           }}
@@ -123,7 +123,7 @@ const Diferenciais: React.FC = () => {
                     top: '50%',
                     [diferencial.align === 'right' ? 'left' : 'right']: '-10%',
                     width: '10%',
-                    height: '2px',
+                    height: '3px',
                     background: goldColor,
                     transform: 'translateY(-50%)',
                     zIndex: 0,
