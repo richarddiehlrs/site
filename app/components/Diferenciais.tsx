@@ -7,7 +7,6 @@ import CheckIcon from '@mui/icons-material/Check';
 
 const Diferenciais: React.FC = () => {
   const theme = useTheme();
-  const bordeauxColor = '#260d0d';
   const goldColor = '#E5B27E';
   const blackColor = '#0A0A0A';
 
