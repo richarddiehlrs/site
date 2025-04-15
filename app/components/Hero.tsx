@@ -29,12 +29,19 @@ const fadeIn = keyframes`
 //   }
 // `;
 
-// Array com todos os textos que serão alternados
-const heroTexts = [
+interface HeroText {
+  title: string;
+  content: Array<string | { text: string; fontWeight: number }>;
+}
+
+const heroTexts: HeroText[] = [
   {
     title: "Transformamos negócios com segurança jurídica.",
     content: [
-      "Mais do que resolver problemas, protegemos o que você construiu e preparamos sua empresa — e seu patrimônio — para crescer com confiança e estratégia.",
+      {
+        text: "Mais do que resolver problemas, protegemos o que você construiu e preparamos sua empresa — e seu patrimônio — para crescer com confiança e estratégia.",
+        fontWeight: 700
+      },
       "Com atendimento personalizado, visão preventiva e foco em resultados, somos o parceiro jurídico que antecipa riscos e protege o que realmente importa para você — porque nascemos para ser referência nacional em advocacia empresarial estratégica."
     ]
   },
@@ -204,24 +211,31 @@ const Hero = () => {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
               >
-                {heroTexts[currentTextIndex].content.map((paragraph, idx) => (
-                  <Typography 
-                    key={idx} 
-                    variant="h5" 
-                    component="div" 
-                    sx={{ 
-                      mb: 3, 
-                      fontWeight: idx === 0 ? 500 : 400,
-                      fontSize: idx === 0 ? { xs: '1.2rem', md: '1.4rem' } : { xs: '1.1rem', md: '1.3rem' },
-                      opacity: idx === 0 ? 1 : 0.95,
-                      display: 'flex',
-                      alignItems: 'flex-start',
-                      lineHeight: 1.7
-                    }}
-                  >
-                    {paragraph}
-                  </Typography>
-                ))}
+                <Typography
+                  variant="body1"
+                  sx={{
+                    maxWidth: '800px',
+                    mx: 'auto',
+                    fontSize: { xs: '1rem', sm: '1.125rem', md: '1.25rem' },
+                    color: alpha('#fff', 0.95),
+                    lineHeight: 1.7,
+                    mb: 4,
+                  }}
+                >
+                  {heroTexts[currentTextIndex].content.map((content, index) => (
+                    <Typography
+                      key={index}
+                      component="span"
+                      sx={{
+                        display: 'block',
+                        mb: 2,
+                        fontWeight: typeof content === 'object' ? content.fontWeight : 400,
+                      }}
+                    >
+                      {typeof content === 'object' ? content.text : content}
+                    </Typography>
+                  ))}
+                </Typography>
               </motion.div>
             </AnimatePresence>
           </Box>
