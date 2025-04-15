@@ -145,18 +145,18 @@ const Hero = () => {
               color: 'white',
               fontFamily: theme.typography.h1.fontFamily,
               fontWeight: 700,
-              fontSize: { xs: '1.8rem', sm: '2.2rem', md: '2.8rem', lg: '3.2rem' },
-              lineHeight: { xs: 1.3, md: 1.2 },
-              mb: { xs: 2, md: 3 },
-              textShadow: `1px 1px 3px ${alpha(blackColor, 0.6)}`,
+              fontSize: { xs: '2.2rem', sm: '2.6rem', md: '3.2rem', lg: '3.8rem' },
+              lineHeight: { xs: 1.2, md: 1.1 },
+              mb: { xs: 3, md: 4 },
+              textShadow: `2px 2px 4px ${alpha(blackColor, 0.5)}`,
               position: 'relative',
               '&::after': {
                 content: '""',
                 position: 'absolute',
-                bottom: '-15px',
+                bottom: '-20px',
                 left: '0',
-                width: '120px',
-                height: '3px',
+                width: '160px',
+                height: '4px',
                 background: `linear-gradient(to right, ${bordeauxColor}, ${alpha(bordeauxColor, 0.3)})`,
               }
             }}
@@ -182,14 +182,15 @@ const Hero = () => {
           <Box
             sx={{
               color: alpha('#e0e0e0', 0.95),
-              mb: { xs: 2, sm: 3, md: 4 },
-              mt: { xs: 2, sm: 3, md: 4 },
+              mb: { xs: 3, sm: 4, md: 5 },
+              mt: { xs: 4, sm: 5, md: 6 },
               fontWeight: 400,
-              fontSize: { xs: '1.1rem', sm: '1.25rem', md: '1.35rem', lg: '1.5rem' },
+              fontSize: { xs: '1.25rem', sm: '1.4rem', md: '1.5rem', lg: '1.6rem' },
               maxWidth: '100%',
-              textShadow: `1px 1px 2px ${alpha(blackColor, 0.7)}`,
-              lineHeight: 1.8,
-              flex: 1
+              textShadow: `1px 1px 3px ${alpha(blackColor, 0.6)}`,
+              lineHeight: 1.7,
+              flex: 1,
+              letterSpacing: '0.02em'
             }}
           >
             <AnimatePresence mode="wait">
@@ -203,12 +204,13 @@ const Hero = () => {
                 <Typography
                   variant="body1"
                   sx={{
-                    maxWidth: '800px',
+                    maxWidth: '900px',
                     mx: 'auto',
-                    fontSize: { xs: '1rem', sm: '1.125rem', md: '1.25rem' },
+                    fontSize: { xs: '1.25rem', sm: '1.4rem', md: '1.5rem', lg: '1.6rem' },
                     color: alpha('#fff', 0.95),
                     lineHeight: 1.7,
                     mb: 4,
+                    letterSpacing: '0.02em'
                   }}
                 >
                   {heroTexts[currentTextIndex].content.map((content, index) => (
@@ -220,8 +222,9 @@ const Hero = () => {
                         fontWeight: typeof content === 'object' ? content.fontWeight : 400,
                         color: typeof content === 'object' ? content.color : undefined,
                         fontStyle: typeof content === 'object' ? content.fontStyle : 'normal',
-                        fontSize: { xs: '1.1rem', sm: '1.25rem', md: '1.35rem', lg: '1.5rem' },
-                        lineHeight: 1.8
+                        fontSize: 'inherit',
+                        lineHeight: 'inherit',
+                        letterSpacing: 'inherit'
                       }}
                     >
                       {typeof content === 'object' ? content.text : content}
