@@ -64,7 +64,13 @@ const Header = () => {
       }}
     >
       <Container maxWidth="lg">
-        <Toolbar disableGutters>
+        <Toolbar 
+          disableGutters
+          sx={{ 
+            py: { xs: 1, md: 1.5 },
+            minHeight: { xs: '70px', md: '90px' } 
+          }}
+        >
           {/* Logo Desktop */}
           <Box
             component="a"
