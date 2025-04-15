@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { Box, Typography, Container, Grid, Link as MuiLink, Divider, useTheme } from '@mui/material';
-import { FaInstagram, FaPhone, FaEnvelope } from 'react-icons/fa';
+import { FaInstagram, FaPhone, FaEnvelope, FaFacebookF } from 'react-icons/fa';
 
 // Mesma cor bordô usada em outros componentes
 const bordeauxColor = '#260d0d';
@@ -71,6 +71,19 @@ const Footer = () => {
               e soluções eficientes para você e sua empresa.
             </Typography>
             <Box display="flex" alignItems="center" gap={2}>
+              <MuiLink 
+                href="https://www.facebook.com/profile.php?id=100090935949111&locale=pt_BR" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                sx={{
+                  color: 'white',
+                  '&:hover': { color: theme.palette.secondary.light },
+                  transition: 'color 0.3s ease',
+                }}
+              >
+                <FaFacebookF size={20} />
+              </MuiLink>
               <MuiLink 
                 href="https://www.instagram.com/der_advocacia" 
                 target="_blank" 

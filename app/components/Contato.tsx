@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaInstagram } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaInstagram, FaFacebookF } from 'react-icons/fa';
 import { Box, Typography, Container, Grid, Card, CardContent, Button, TextField, useTheme, Divider } from '@mui/material';
 
 // Mesma cor bordô usada em outros componentes
@@ -28,6 +28,12 @@ const Contato = () => {
       title: 'Endereço',
       info: 'Avenida Cristovão Colombo, 2955 - Sala 402 - Porto Alegre/RS',
       link: 'https://maps.google.com/?q=Avenida+Cristovão+Colombo,+2955+-+Sala+402+-+Porto+Alegre/RS'
+    },
+    {
+      icon: <FaFacebookF style={{ fontSize: '1.5rem', color: theme.palette.secondary.main }} />,
+      title: 'Facebook',
+      info: 'D&R Advocacia',
+      link: 'https://www.facebook.com/profile.php?id=100090935949111&locale=pt_BR'
     },
     {
       icon: <FaInstagram style={{ fontSize: '1.5rem', color: theme.palette.secondary.main }} />,
