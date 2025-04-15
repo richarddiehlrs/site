@@ -87,8 +87,8 @@ const Header = () => {
         <Toolbar 
           disableGutters
           sx={{ 
-            py: { xs: 0.5, md: 1 },
-            minHeight: { xs: '60px', md: '80px' } 
+            py: { xs: 0.75, md: 1.25 },
+            minHeight: { xs: '70px', md: '90px' } 
           }}
         >
           {/* Logo Desktop */}
@@ -122,7 +122,7 @@ const Header = () => {
                 src="/images/4ce7142d-36b2-42ed-ac5b-97103c248abd.png"
                 alt="D&R Advocacia Logo"
                 width={240}
-                height={80}
+                height={90}
                 style={{ 
                   transition: 'filter 0.3s ease',
                 }}
@@ -198,7 +198,7 @@ const Header = () => {
                 src="/images/4ce7142d-36b2-42ed-ac5b-97103c248abd.png"
                 alt="D&R Advocacia Logo"
                 width={200}
-                height={68}
+                height={76}
                 style={{ 
                   transition: 'filter 0.3s ease',
                 }}
