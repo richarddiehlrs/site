@@ -95,8 +95,8 @@ const Header = () => {
               <Image
                 src="/images/4ce7142d-36b2-42ed-ac5b-97103c248abd.png"
                 alt="D&R Advocacia Logo"
-                width={220}
-                height={62}
+                width={260}
+                height={73}
                 style={{ 
                   transition: 'filter 0.3s ease',
                 }}
@@ -171,8 +171,8 @@ const Header = () => {
               <Image
                 src="/images/4ce7142d-36b2-42ed-ac5b-97103c248abd.png"
                 alt="D&R Advocacia Logo"
-                width={180}
-                height={50}
+                width={220}
+                height={62}
                 style={{ 
                   transition: 'filter 0.3s ease',
                 }}
