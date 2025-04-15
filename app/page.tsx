@@ -19,7 +19,6 @@ export default function Home() {
     <Providers>
       <Box component="main" id="main-content">
         <Header />
-        <Box sx={{ height: { xs: '70px', md: '90px' } }} />
         <Hero />
         <Diferenciais />
         <AreasAtuacao />
