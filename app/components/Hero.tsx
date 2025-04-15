@@ -30,22 +30,15 @@ const fadeIn = keyframes`
 
 interface HeroText {
   title: string;
-  content: Array<string | { 
-    text: string; 
-    fontWeight?: number; 
-    color?: string; 
-    fontStyle?: string;
-    display?: string;
-    marginTop?: string;
-  }>;
+  content: string[];
 }
 
 const heroTexts: HeroText[] = [
   {
-    title: "Por que escolher a D&R Advocacia",
+    title: "Transformamos negócios com segurança jurídica.",
     content: [
-      "Foco em educação jurídica que transforma conhecimento em poder. Empoderamos nossos clientes com conhecimento. Oferecemos conteúdos e orientações práticas para que estejam sempre um passo à frente.",
-      "Multidisciplinaridade e estratégia integrada. Reunimos diferentes áreas do direito em um só lugar, com visão estratégica e soluções completas para empresas e famílias."
+      "Mais do que resolver problemas, protegemos o que você construiu e preparamos sua empresa — e seu patrimônio — para crescer com confiança e estratégia.",
+      "Com atendimento personalizado, visão preventiva e foco em resultados, somos o parceiro jurídico que antecipa riscos e protege o que realmente importa para você — porque nascemos para ser referência nacional em advocacia empresarial estratégica."
     ]
   }
 ];
@@ -140,7 +133,7 @@ const Hero = () => {
               }
             }}
           >
-            <span>Por que escolher a D<span style={{ fontFamily: 'serif' }}>&</span>R Advocacia</span>
+            {heroTexts[0].title}
           </Typography>
           
           <Box
@@ -169,10 +162,10 @@ const Hero = () => {
                 letterSpacing: '0.02em'
               }}
             >
-              {heroTexts[0].content.map((content, index) => (
+              {heroTexts[0].content.map((text, index) => (
                 <Typography
                   key={index}
-                  component="span"
+                  component="p"
                   sx={{
                     display: 'block',
                     marginTop: index > 0 ? '1.5rem' : undefined,
@@ -182,7 +175,7 @@ const Hero = () => {
                     letterSpacing: 'inherit'
                   }}
                 >
-                  {content}
+                  {text}
                 </Typography>
               ))}
             </Typography>
