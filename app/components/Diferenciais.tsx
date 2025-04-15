@@ -61,7 +61,7 @@ const Diferenciais: React.FC = () => {
             mb: { xs: 5, md: 7 },
             pt: 2,
             color: 'white',
-            fontFamily: theme.typography.h4.fontFamily,
+            fontFamily: theme.typography.h2.fontFamily,
             textTransform: 'uppercase',
             position: 'relative',
             '&::after': {
