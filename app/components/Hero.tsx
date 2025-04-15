@@ -31,17 +31,14 @@ const fadeIn = keyframes`
 
 interface HeroText {
   title: string;
-  content: Array<string | { text: string; fontWeight: number }>;
+  content: Array<string | { text: string; fontWeight?: number }>;
 }
 
 const heroTexts: HeroText[] = [
   {
     title: "Transformamos negócios com segurança jurídica.",
     content: [
-      {
-        text: "Mais do que resolver problemas, protegemos o que você construiu e preparamos sua empresa — e seu patrimônio — para crescer com confiança e estratégia.",
-        fontWeight: 700
-      },
+      "Mais do que resolver problemas, protegemos o que você construiu e preparamos sua empresa — e seu patrimônio — para crescer com confiança e estratégia.",
       "Com atendimento personalizado, visão preventiva e foco em resultados, somos o parceiro jurídico que antecipa riscos e protege o que realmente importa para você — porque nascemos para ser referência nacional em advocacia empresarial estratégica."
     ]
   },
@@ -96,26 +93,12 @@ const Hero = () => {
         paddingTop: { xs: '100px', sm: '120px', md: '80px' },
         paddingBottom: { xs: '60px', sm: '80px', md: '60px' },
         background: `
-          linear-gradient(to right, ${alpha(blackColor, 0.9)}, ${alpha(blackColor, 0.95)}),
-          repeating-linear-gradient(
-            45deg, 
-            ${alpha(bordeauxColor, 0.05)} 0px, 
-            ${alpha(bordeauxColor, 0.08)} 2px, 
-            transparent 2px, 
-            transparent 10px
-          ),
-          radial-gradient(
-            circle at 50% 50%,
-            ${alpha(bordeauxColor, 0.05)} 0%,
-            ${alpha(bordeauxColor, 0.02)} 20%,
-            ${alpha(bordeauxColor, 0.01)} 40%,
-            transparent 60%
-          ),
-          url("/images/pattern.png")
+          linear-gradient(to right, ${alpha(blackColor, 0.7)}, ${alpha(blackColor, 0.7)}),
+          url('/images/image_fx.jpg')
         `,
-        backgroundSize: 'cover, auto, cover, 400px',
+        backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundBlendMode: 'normal, overlay, overlay, normal',
+        backgroundRepeat: 'no-repeat',
         '&::before': {
           content: '""',
           position: 'absolute',
@@ -123,7 +106,7 @@ const Hero = () => {
           left: 0,
           width: '100%',
           height: '100%',
-          background: `linear-gradient(110deg, ${alpha(bordeauxColor, 0.15)} 0%, ${alpha('#1a0808', 0.05)} 100%)`,
+          background: `linear-gradient(110deg, ${alpha(bordeauxColor, 0.1)} 0%, ${alpha('#1a0808', 0.05)} 100%)`,
           backgroundSize: '200% 100%',
           animation: `${fadeIn} 15s infinite linear`,
           zIndex: 1,
