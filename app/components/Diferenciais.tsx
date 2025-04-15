@@ -2,10 +2,13 @@
 
 import React from 'react';
 import { Box, Typography, useTheme } from '@mui/material';
+import { alpha } from '@mui/material/styles';
 import CheckIcon from '@mui/icons-material/Check';
 
 const Diferenciais: React.FC = () => {
   const theme = useTheme();
+  const bordeauxColor = '#260d0d';
+  const goldColor = '#E5B27E';
 
   const diferenciais = [
     {
@@ -35,32 +38,25 @@ const Diferenciais: React.FC = () => {
       sx={{
         py: { xs: 6, md: 8 },
         px: { xs: 2, sm: 4, md: 6 },
-        backgroundColor: theme.palette.primary.main,
+        backgroundColor: bordeauxColor,
         position: 'relative',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        borderTop: `1px solid ${alpha(goldColor, 0.3)}`,
+        borderBottom: `1px solid ${alpha(goldColor, 0.3)}`
       }}
     >
-      {/* Linhas decorativas */}
-      <Box
+      {/* Linha central */}
+      <Box 
         sx={{
           position: 'absolute',
           top: 0,
-          left: 0,
-          right: 0,
-          height: '1px',
-          background: `linear-gradient(to right, transparent, ${theme.palette.common.white}, transparent)`,
-          opacity: 0.3
-        }}
-      />
-      <Box
-        sx={{
-          position: 'absolute',
           bottom: 0,
-          left: 0,
-          right: 0,
-          height: '1px',
-          background: `linear-gradient(to right, transparent, ${theme.palette.common.white}, transparent)`,
-          opacity: 0.3
+          left: '50%',
+          width: '2px',
+          background: alpha(goldColor, 0.5),
+          transform: 'translateX(-50%)',
+          display: { xs: 'none', md: 'block' },
+          zIndex: 0
         }}
       />
 
@@ -78,8 +74,19 @@ const Diferenciais: React.FC = () => {
             fontWeight: 700,
             textAlign: 'center',
             mb: { xs: 4, md: 6 },
-            color: theme.palette.common.white,
-            fontFamily: theme.typography.h4.fontFamily
+            color: 'white',
+            fontFamily: theme.typography.h4.fontFamily,
+            textTransform: 'uppercase',
+            position: 'relative',
+            '&::after': {
+              content: '""',
+              position: 'absolute',
+              bottom: '-20px',
+              left: 0,
+              width: '100%',
+              height: '2px',
+              background: goldColor
+            }
           }}
         >
           O QUE FAZ DA <span style={{ fontFamily: 'serif' }}>D&R</span> UMA ESCOLHA INTELIGENTE
@@ -89,7 +96,7 @@ const Diferenciais: React.FC = () => {
           sx={{
             display: 'flex',
             flexDirection: 'column',
-            gap: { xs: 4, md: 6 }
+            gap: { xs: 6, md: 8 }
           }}
         >
           {diferenciais.map((diferencial, index) => (
@@ -97,62 +104,89 @@ const Diferenciais: React.FC = () => {
               key={index}
               sx={{
                 display: 'flex',
-                flexDirection: { xs: 'column', sm: 'row' },
-                alignItems: { xs: 'center', sm: 'flex-start' },
-                gap: { xs: 2, sm: 3 },
+                width: '100%',
                 position: 'relative',
-                ml: { sm: diferencial.align === 'left' ? 0 : 'auto' },
-                mr: { sm: diferencial.align === 'right' ? 0 : 'auto' },
-                maxWidth: { sm: '80%' }
+                justifyContent: diferencial.align === 'right' ? 'flex-end' : 'flex-start',
               }}
             >
               <Box
                 sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 2,
-                  order: { xs: 1, sm: diferencial.align === 'right' ? 2 : 1 }
+                  width: { xs: '100%', md: '45%' },
+                  position: 'relative',
+                  zIndex: 1,
                 }}
               >
+                {/* Linha horizontal */}
                 <Box
                   sx={{
-                    width: { xs: '40px', sm: '50px' },
-                    height: { xs: '40px', sm: '50px' },
-                    borderRadius: '50%',
-                    backgroundColor: theme.palette.common.white,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexShrink: 0
+                    position: 'absolute',
+                    top: '50%',
+                    [diferencial.align === 'right' ? 'left' : 'right']: '-10%',
+                    width: '10%',
+                    height: '2px',
+                    background: goldColor,
+                    transform: 'translateY(-50%)',
+                    zIndex: 0,
+                    display: { xs: 'none', md: 'block' }
                   }}
-                >
-                  <CheckIcon sx={{ color: theme.palette.primary.main, fontSize: { xs: '1.3rem', sm: '1.5rem' } }} />
-                </Box>
-                <Box
-                  sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: 1,
-                    maxWidth: '400px',
-                    textAlign: { xs: 'center', sm: diferencial.align }
-                  }}
-                >
-                  <Typography
-                    variant="h3"
+                />
+                
+                <Box>
+                  <Box
                     sx={{
-                      fontSize: { xs: '1rem', sm: '1.1rem', md: '1.2rem' },
-                      fontWeight: 600,
-                      color: theme.palette.common.white,
-                      fontFamily: theme.typography.h4.fontFamily
+                      display: 'flex',
+                      alignItems: 'center',
+                      flexDirection: diferencial.align === 'right' ? 'row' : 'row-reverse',
+                      justifyContent: diferencial.align === 'right' ? 'flex-start' : 'flex-end',
+                      mb: 2,
                     }}
                   >
-                    {diferencial.title}
-                  </Typography>
+                    <Typography
+                      variant="h5"
+                      sx={{
+                        color: goldColor,
+                        fontSize: { xs: '1.3rem', md: '1.5rem' },
+                        fontWeight: 600,
+                        fontFamily: theme.typography.h4.fontFamily,
+                        lineHeight: 1.4,
+                        background: bordeauxColor,
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: 1
+                      }}
+                    >
+                      {diferencial.title}
+                      <Box
+                        sx={{
+                          width: 35,
+                          height: 35,
+                          borderRadius: '50%',
+                          backgroundColor: goldColor,
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          flexShrink: 0
+                        }}
+                      >
+                        <CheckIcon 
+                          sx={{
+                            color: bordeauxColor,
+                            fontSize: '1.25rem'
+                          }} 
+                        />
+                      </Box>
+                    </Typography>
+                  </Box>
                   <Typography
                     sx={{
-                      fontSize: { xs: '0.85rem', sm: '0.9rem' },
-                      color: 'rgba(255, 255, 255, 0.85)',
-                      lineHeight: 1.6
+                      color: alpha('#fff', 0.95),
+                      fontSize: { xs: '0.9rem', md: '1rem' },
+                      lineHeight: 1.8,
+                      textAlign: diferencial.align === 'right' ? 'left' : 'right',
+                      fontWeight: 300,
+                      maxWidth: '400px',
+                      marginLeft: diferencial.align === 'right' ? 0 : 'auto',
+                      marginRight: diferencial.align === 'right' ? 'auto' : 0,
                     }}
                   >
                     {diferencial.description}
