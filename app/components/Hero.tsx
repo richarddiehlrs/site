@@ -31,7 +31,7 @@ const fadeIn = keyframes`
 
 interface HeroText {
   title: string;
-  content: Array<string | { text: string; fontWeight?: number; color?: string }>;
+  content: Array<string | { text: string; fontWeight?: number; color?: string; fontStyle?: string }>;
 }
 
 const heroTexts: HeroText[] = [
@@ -41,7 +41,8 @@ const heroTexts: HeroText[] = [
       "Mais do que resolver problemas, ",
       {
         text: "protegemos o que você construiu e preparamos sua empresa — e seu patrimônio — para crescer com confiança e estratégia",
-        color: blackColor
+        fontStyle: 'italic',
+        color: 'white'
       },
       ".",
       "Com atendimento personalizado, visão preventiva e foco em resultados, somos o parceiro jurídico que antecipa riscos e protege o que realmente importa para você — porque nascemos para ser referência nacional em advocacia empresarial estratégica."
@@ -184,10 +185,10 @@ const Hero = () => {
               mb: { xs: 2, sm: 3, md: 4 },
               mt: { xs: 2, sm: 3, md: 4 },
               fontWeight: 400,
-              fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem', lg: '1.2rem' },
+              fontSize: { xs: '1.1rem', sm: '1.25rem', md: '1.35rem', lg: '1.5rem' },
               maxWidth: '100%',
               textShadow: `1px 1px 2px ${alpha(blackColor, 0.7)}`,
-              lineHeight: 1.6,
+              lineHeight: 1.8,
               flex: 1
             }}
           >
@@ -219,6 +220,9 @@ const Hero = () => {
                         mb: 2,
                         fontWeight: typeof content === 'object' ? content.fontWeight : 400,
                         color: typeof content === 'object' ? content.color : undefined,
+                        fontStyle: typeof content === 'object' ? content.fontStyle : 'normal',
+                        fontSize: { xs: '1.1rem', sm: '1.25rem', md: '1.35rem', lg: '1.5rem' },
+                        lineHeight: 1.8
                       }}
                     >
                       {typeof content === 'object' ? content.text : content}
