@@ -46,11 +46,6 @@ const Header = () => {
     const mainContent = document.getElementById('main-content');
     if (mainContent) {
       mainContent.style.paddingTop = window.innerWidth < 900 ? `${headerHeight.xs}px` : `${headerHeight.md}px`;
-      // Adicionando uma margem superior à primeira seção para melhor espaçamento
-      const firstSection = mainContent.querySelector('section');
-      if (firstSection) {
-        firstSection.style.marginTop = '20px';
-      }
     }
     
     const handleResize = () => {
