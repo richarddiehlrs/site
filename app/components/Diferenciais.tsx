@@ -1,13 +1,11 @@
 'use client';
 
 import React from 'react';
-import { Box, Typography, useTheme, useMediaQuery } from '@mui/material';
+import { Box, Typography, useTheme } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
 
 const Diferenciais: React.FC = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const isTablet = useMediaQuery(theme.breakpoints.down('md'));
 
   const diferenciais = [
     {
