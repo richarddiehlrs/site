@@ -169,12 +169,15 @@ const Contato = () => {
                         <Button
                           type="submit"
                           variant="contained"
-                          color="secondary"
                           size="large"
                           fullWidth
                           sx={{
                             py: 1.5,
                             mt: 1,
+                            bgcolor: bordeauxColor,
+                            '&:hover': {
+                              bgcolor: theme.palette.secondary.main,
+                            }
                           }}
                         >
                           Enviar Mensagem
