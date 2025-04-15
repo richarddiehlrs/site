@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Box, Typography, Container, Button, useTheme } from '@mui/material';
 import { keyframes } from '@emotion/react';
 import { alpha } from '@mui/material/styles';
