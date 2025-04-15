@@ -64,11 +64,11 @@ const Hero = () => {
         height: 'auto',
         minHeight: { xs: '100vh', md: '100vh' },
         display: 'flex',
-        alignItems: 'center',
+        alignItems: 'flex-start',
         justifyContent: 'center',
         color: 'white',
         overflow: 'visible',
-        paddingTop: { xs: '210px', sm: '220px', md: '160px' },
+        paddingTop: { xs: '240px', sm: '250px', md: '220px' },
         paddingBottom: { xs: '60px', sm: '80px', md: '60px' },
         background: `
           linear-gradient(to right, ${alpha(blackColor, 0.7)}, ${alpha(blackColor, 0.7)}),
@@ -108,7 +108,8 @@ const Hero = () => {
           animation: mounted ? `${fadeIn} 0.8s ease-out` : 'none',
           display: 'flex',
           flexDirection: 'column',
-          gap: { xs: 3, md: 4 }
+          gap: { xs: 3, md: 4 },
+          pt: { xs: 10, md: 8 }
         }}>
           <Typography
             variant="h1"

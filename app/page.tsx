@@ -17,9 +17,11 @@ import Diferenciais from './components/Diferenciais';
 export default function Home() {
   return (
     <Providers>
-      <Box component="main" id="main-content">
+      <Box component="main" id="main-content" sx={{ position: 'relative' }}>
         <Header />
-        <Hero />
+        <Box sx={{ position: 'relative', marginTop: { xs: '-10px', md: 0 } }}>
+          <Hero />
+        </Box>
         <Diferenciais />
         <AreasAtuacao />
         <Sobre />

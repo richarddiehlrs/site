@@ -68,8 +68,8 @@ const Header = () => {
         <Toolbar 
           disableGutters
           sx={{ 
-            py: { xs: 0.75, md: 1.25 },
-            minHeight: { xs: '70px', md: '90px' } 
+            py: { xs: 1, md: 1.5 },
+            minHeight: { xs: '85px', md: '100px' } 
           }}
         >
           {/* Logo Desktop */}
