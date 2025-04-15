@@ -17,7 +17,7 @@ import Diferenciais from './components/Diferenciais';
 export default function Home() {
   return (
     <Providers>
-      <Box component="main">
+      <Box component="main" id="main-content">
         <Header />
         <Hero />
         <Diferenciais />

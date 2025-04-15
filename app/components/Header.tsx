@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -37,6 +37,26 @@ const Header = () => {
     disableHysteresis: true,
     threshold: 50,
   });
+
+  // Calcular altura do AppBar para padding do conteúdo
+  const headerHeight = { xs: 100, md: 120 };
+  
+  // Adicionar padding-top ao conteúdo principal
+  useEffect(() => {
+    const mainContent = document.getElementById('main-content');
+    if (mainContent) {
+      mainContent.style.paddingTop = window.innerWidth < 900 ? `${headerHeight.xs}px` : `${headerHeight.md}px`;
+    }
+    
+    const handleResize = () => {
+      if (mainContent) {
+        mainContent.style.paddingTop = window.innerWidth < 900 ? `${headerHeight.xs}px` : `${headerHeight.md}px`;
+      }
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
