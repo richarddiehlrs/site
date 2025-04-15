@@ -68,7 +68,7 @@ const Hero = () => {
         justifyContent: 'center',
         color: 'white',
         overflow: 'visible',
-        paddingTop: { xs: '120px', sm: '130px', md: '120px' },
+        paddingTop: { xs: '210px', sm: '220px', md: '160px' },
         paddingBottom: { xs: '60px', sm: '80px', md: '60px' },
         background: `
           linear-gradient(to right, ${alpha(blackColor, 0.7)}, ${alpha(blackColor, 0.7)}),
