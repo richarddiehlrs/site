@@ -139,11 +139,31 @@ const Diferenciais: React.FC = () => {
                     sx={{
                       display: 'flex',
                       alignItems: 'center',
-                      flexDirection: diferencial.align === 'right' ? 'row' : 'row-reverse',
+                      flexDirection: 'row',
                       justifyContent: diferencial.align === 'right' ? 'flex-start' : 'flex-end',
                       mb: 2,
                     }}
                   >
+                    <Box
+                      sx={{
+                        width: 35,
+                        height: 35,
+                        borderRadius: '50%',
+                        backgroundColor: goldColor,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        flexShrink: 0,
+                        mr: 2
+                      }}
+                    >
+                      <CheckIcon 
+                        sx={{
+                          color: blackColor,
+                          fontSize: '1.25rem'
+                        }} 
+                      />
+                    </Box>
                     <Typography
                       variant="h5"
                       sx={{
@@ -154,30 +174,10 @@ const Diferenciais: React.FC = () => {
                         lineHeight: 1.4,
                         background: blackColor,
                         display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: 1
+                        alignItems: 'center'
                       }}
                     >
                       {diferencial.title}
-                      <Box
-                        sx={{
-                          width: 35,
-                          height: 35,
-                          borderRadius: '50%',
-                          backgroundColor: goldColor,
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          flexShrink: 0
-                        }}
-                      >
-                        <CheckIcon 
-                          sx={{
-                            color: blackColor,
-                            fontSize: '1.25rem'
-                          }} 
-                        />
-                      </Box>
                     </Typography>
                   </Box>
                   <Typography
