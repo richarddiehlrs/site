@@ -225,19 +225,6 @@ const Planejamento = () => {
               >
                 É o que garante que você tome decisões com segurança, proteja o que já construiu e cresça com confiança.
               </Typography>
-              <Typography
-                component="span"
-                sx={{
-                  display: 'block',
-                  fontSize: '1.2rem',
-                  fontWeight: 500,
-                  mt: 2,
-                  color: bordeauxColor,
-                  fontFamily: theme.typography.h4.fontFamily,
-                }}
-              >
-                Fale com a D<span style={{ fontFamily: 'serif' }}>&</span>R e veja como nosso atendimento consultivo pode proteger sua empresa e ampliar seus resultados.
-              </Typography>
             </Typography>
           </Card>
         </motion.div>
@@ -299,17 +286,6 @@ const Planejamento = () => {
                 }}
               >
                 Aqui, você não será mais um processo. Será um projeto estratégico.
-              </Typography>
-              <Typography
-                component="span"
-                sx={{
-                  fontSize: '1.2rem',
-                  fontWeight: 500,
-                  color: bordeauxColor,
-                  fontFamily: theme.typography.h4.fontFamily,
-                }}
-              >
-                Fale com a D<span style={{ fontFamily: 'serif' }}>&</span>R e veja como nosso atendimento consultivo pode proteger sua empresa e ampliar seus resultados.
               </Typography>
             </Typography>
           </Card>
