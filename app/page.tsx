@@ -12,6 +12,7 @@ import Contato from './components/Contato';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import WhatsAppButton from './components/WhatsAppButton';
+import Diferenciais from './components/Diferenciais';
 
 export default function Home() {
   return (
@@ -20,9 +21,10 @@ export default function Home() {
         <Header />
         <Hero />
         <AreasAtuacao />
+        <Diferenciais />
+        <Planejamento />
         <Sobre />
         <Depoimentos />
-        <Planejamento />
         <Contato />
         <Footer />
         <ScrollToTop />
