@@ -43,30 +43,6 @@ interface HeroText {
 
 const heroTexts: HeroText[] = [
   {
-    title: "Transformamos negócios com segurança jurídica.",
-    content: [
-      "Mais do que resolver problemas, ",
-      {
-        text: "protegemos o que você construiu e preparamos sua empresa — e seu patrimônio — para crescer com confiança e estratégia",
-        fontStyle: 'italic',
-        color: 'white'
-      },
-      ".",
-      {
-        text: "\nCom atendimento personalizado, visão preventiva e foco em resultados, somos o parceiro jurídico que antecipa riscos e protege o que realmente importa para você — porque nascemos para ser referência nacional em advocacia empresarial estratégica.",
-        display: 'block',
-        marginTop: '1.5rem'
-      }
-    ]
-  },
-  {
-    title: "O Que Faz da D&R uma Escolha Inteligente",
-    content: [
-      "Advocacia preventiva que evita problemas antes que aconteçam. Atuamos de forma estratégica para prevenir riscos jurídicos antes que se tornem conflitos ou processos — protegendo o patrimônio e o futuro do cliente.",
-      "Atendimento personalizado que constrói confiança. Cada cliente é único. Nosso atendimento é próximo, contínuo e estratégico, com foco em relações duradouras."
-    ]
-  },
-  {
     title: "Por que escolher a D&R Advocacia",
     content: [
       "Foco em educação jurídica que transforma conhecimento em poder. Empoderamos nossos clientes com conhecimento. Oferecemos conteúdos e orientações práticas para que estejam sempre um passo à frente.",
@@ -77,17 +53,10 @@ const heroTexts: HeroText[] = [
 
 const Hero = () => {
   const theme = useTheme();
-  const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [mounted, setMounted] = useState(false);
   
-  // Alternar entre os textos a cada 15 segundos
   useEffect(() => {
     setMounted(true);
-    const interval = setInterval(() => {
-      setCurrentTextIndex((prevIndex) => (prevIndex + 1) % heroTexts.length);
-    }, 15000);
-    
-    return () => clearInterval(interval);
   }, []);
 
   if (!mounted) {
@@ -172,22 +141,7 @@ const Hero = () => {
               }
             }}
           >
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentTextIndex}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.8 }}
-              >
-                {heroTexts[currentTextIndex].title === "Por que escolher a D&R Advocacia" 
-                  ? <span>Por que escolher a D<span style={{ fontFamily: 'serif' }}>&</span>R Advocacia</span>
-                  : heroTexts[currentTextIndex].title === "O Que Faz da D&R uma Escolha Inteligente"
-                  ? <span>O Que Faz da D<span style={{ fontFamily: 'serif' }}>&</span>R uma Escolha Inteligente</span>
-                  : heroTexts[currentTextIndex].title
-                }
-              </motion.div>
-            </AnimatePresence>
+            <span>Por que escolher a D<span style={{ fontFamily: 'serif' }}>&</span>R Advocacia</span>
           </Typography>
           
           <Box
@@ -204,78 +158,35 @@ const Hero = () => {
               letterSpacing: '0.02em'
             }}
           >
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentTextIndex}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.8, delay: 0.1 }}
-              >
+            <Typography
+              variant="body1"
+              sx={{
+                maxWidth: '900px',
+                mx: 'auto',
+                fontSize: { xs: '1.1rem', sm: '1.2rem', md: '1.3rem', lg: '1.4rem' },
+                color: alpha('#fff', 0.95),
+                lineHeight: 1.7,
+                mb: 4,
+                letterSpacing: '0.02em'
+              }}
+            >
+              {heroTexts[0].content.map((content, index) => (
                 <Typography
-                  variant="body1"
+                  key={index}
+                  component="span"
                   sx={{
-                    maxWidth: '900px',
-                    mx: 'auto',
-                    fontSize: { xs: '1.1rem', sm: '1.2rem', md: '1.3rem', lg: '1.4rem' },
-                    color: alpha('#fff', 0.95),
-                    lineHeight: 1.7,
-                    mb: 4,
-                    letterSpacing: '0.02em'
+                    display: 'block',
+                    marginTop: index > 0 ? '1.5rem' : undefined,
+                    fontWeight: 400,
+                    fontSize: 'inherit',
+                    lineHeight: 'inherit',
+                    letterSpacing: 'inherit'
                   }}
                 >
-                  {heroTexts[currentTextIndex].content.map((content, index) => (
-                    <Typography
-                      key={index}
-                      component="span"
-                      sx={{
-                        display: typeof content === 'object' && content.display ? content.display : 'inline',
-                        marginTop: typeof content === 'object' && content.marginTop ? content.marginTop : undefined,
-                        fontWeight: typeof content === 'object' ? content.fontWeight : 400,
-                        color: typeof content === 'object' ? content.color : undefined,
-                        fontStyle: typeof content === 'object' ? content.fontStyle : 'normal',
-                        fontSize: 'inherit',
-                        lineHeight: 'inherit',
-                        letterSpacing: 'inherit'
-                      }}
-                    >
-                      {typeof content === 'object' ? content.text : content}
-                    </Typography>
-                  ))}
+                  {content}
                 </Typography>
-              </motion.div>
-            </AnimatePresence>
-          </Box>
-          
-          {/* Indicadores para mostrar qual slide está ativo */}
-          <Box sx={{ 
-            display: 'flex', 
-            gap: 1, 
-            mb: 4, 
-            justifyContent: 'center',
-            position: 'relative',
-            zIndex: 10
-          }}>
-            {heroTexts.map((_, index) => (
-              <Box
-                key={index}
-                onClick={() => setCurrentTextIndex(index)}
-                sx={{
-                  width: { xs: '14px', md: '12px' },
-                  height: { xs: '14px', md: '12px' },
-                  borderRadius: '50%',
-                  backgroundColor: index === currentTextIndex ? theme.palette.secondary.main : alpha('#fff', 0.5),
-                  border: '1px solid rgba(255,255,255,0.3)',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s ease',
-                  WebkitTransition: 'all 0.3s ease',
-                  WebkitBackfaceVisibility: 'hidden',
-                  '&:hover': {
-                    transform: 'scale(1.2)',
-                  }
-                }}
-              />
-            ))}
+              ))}
+            </Typography>
           </Box>
           
           <Box sx={{ 
