@@ -20,8 +20,8 @@ export default function Home() {
       <Box component="main">
         <Header />
         <Hero />
-        <AreasAtuacao />
         <Diferenciais />
+        <AreasAtuacao />
         <Sobre />
         <Depoimentos />
         <Planejamento />

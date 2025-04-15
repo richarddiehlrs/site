@@ -39,12 +39,12 @@ const Diferenciais: React.FC = () => {
       sx={{
         py: { xs: 6, md: 8 },
         px: { xs: 2, sm: 4, md: 6 },
-        backgroundColor: bordeauxColor,
+        backgroundColor: blackColor,
         position: 'relative',
         overflow: 'hidden',
         borderTop: `3px solid ${goldColor}`,
         borderBottom: `3px solid ${goldColor}`,
-        boxShadow: `inset 0 0 50px ${alpha(blackColor, 0.5)}`
+        boxShadow: `inset 0 0 50px ${alpha(bordeauxColor, 0.5)}`
       }}
     >
       <Box
@@ -152,7 +152,7 @@ const Diferenciais: React.FC = () => {
                         fontWeight: 600,
                         fontFamily: theme.typography.h4.fontFamily,
                         lineHeight: 1.4,
-                        background: bordeauxColor,
+                        background: blackColor,
                         display: 'inline-flex',
                         alignItems: 'center',
                         gap: 1
@@ -173,7 +173,7 @@ const Diferenciais: React.FC = () => {
                       >
                         <CheckIcon 
                           sx={{
-                            color: bordeauxColor,
+                            color: blackColor,
                             fontSize: '1.25rem'
                           }} 
                         />
