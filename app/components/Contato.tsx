@@ -84,8 +84,7 @@ const Contato = () => {
               color: theme.palette.secondary.main,
             }}
           >
-            Estamos à disposição para atender às suas necessidades jurídicas.
-            Entre em contato conosco para agendar uma consulta.
+            Fale com a D<span style={{ fontFamily: 'serif' }}>&</span>R e veja como nosso atendimento consultivo pode proteger sua empresa e ampliar seus resultados.
           </Typography>
         </motion.div>
 
