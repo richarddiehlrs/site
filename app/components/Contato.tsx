@@ -220,7 +220,6 @@ const Contato = () => {
                   </Typography>
                   
                   <Typography variant="body1" sx={{ mb: 4 }}>
-                    Ficamos no coração de Porto Alegre, com fácil acesso e estacionamento.
                     Agende uma visita ou entre em contato pelos canais abaixo:
                   </Typography>
                   
