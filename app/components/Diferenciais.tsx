@@ -45,21 +45,6 @@ const Diferenciais: React.FC = () => {
         borderBottom: `3px solid ${goldColor}`
       }}
     >
-      {/* Linha central */}
-      <Box 
-        sx={{
-          position: 'absolute',
-          top: 0,
-          bottom: 0,
-          left: '50%',
-          width: '4px',
-          background: goldColor,
-          transform: 'translateX(-50%)',
-          display: { xs: 'none', md: 'block' },
-          zIndex: 0
-        }}
-      />
-
       <Box
         sx={{
           maxWidth: '1200px',
@@ -73,7 +58,8 @@ const Diferenciais: React.FC = () => {
             fontSize: { xs: '1.8rem', sm: '2.2rem', md: '2.5rem' },
             fontWeight: 700,
             textAlign: 'center',
-            mb: { xs: 4, md: 6 },
+            mb: { xs: 5, md: 7 },
+            pt: 2,
             color: 'white',
             fontFamily: theme.typography.h4.fontFamily,
             textTransform: 'uppercase',
@@ -91,6 +77,21 @@ const Diferenciais: React.FC = () => {
         >
           O QUE FAZ DA <span style={{ fontFamily: 'serif' }}>D&R</span> UMA ESCOLHA INTELIGENTE
         </Typography>
+
+        {/* Linha central */}
+        <Box 
+          sx={{
+            position: 'absolute',
+            top: '130px',
+            bottom: 0,
+            left: '50%',
+            width: '4px',
+            background: goldColor,
+            transform: 'translateX(-50%)',
+            display: { xs: 'none', md: 'block' },
+            zIndex: 0
+          }}
+        />
 
         <Box
           sx={{
