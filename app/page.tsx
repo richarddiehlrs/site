@@ -23,8 +23,8 @@ export default function Home() {
         <AreasAtuacao />
         <Diferenciais />
         <Sobre />
-        <Planejamento />
         <Depoimentos />
+        <Planejamento />
         <Contato />
         <Footer />
         <ScrollToTop />

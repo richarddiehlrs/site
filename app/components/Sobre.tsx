@@ -53,19 +53,6 @@ const Sobre = () => {
           >
             Sobre Nós
           </Typography>
-          <Typography
-            variant="h5"
-            component="h3"
-            sx={{
-              fontFamily: theme.typography.h4.fontFamily,
-              fontWeight: 600,
-              color: theme.palette.secondary.light,
-              mb: 2,
-              fontSize: { xs: '1.2rem', sm: '1.3rem', md: '1.4rem' }
-            }}
-          >
-            O que falam sobre nós
-          </Typography>
           <Box
             sx={{
               width: '5rem',
