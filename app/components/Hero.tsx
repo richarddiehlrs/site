@@ -216,8 +216,7 @@ const Hero = () => {
                       key={index}
                       component="span"
                       sx={{
-                        display: 'block',
-                        mb: 2,
+                        display: 'inline',
                         fontWeight: typeof content === 'object' ? content.fontWeight : 400,
                         color: typeof content === 'object' ? content.color : undefined,
                         fontStyle: typeof content === 'object' ? content.fontStyle : 'normal',
