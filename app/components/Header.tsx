@@ -39,7 +39,7 @@ const Header = () => {
   });
 
   // Calcular altura do AppBar para padding do conteúdo
-  const headerHeight = { xs: 100, md: 120 };
+  const headerHeight = { xs: 80, md: 90 };
   
   // Adicionar padding-top ao conteúdo principal
   useEffect(() => {
@@ -87,8 +87,8 @@ const Header = () => {
         <Toolbar 
           disableGutters
           sx={{ 
-            py: { xs: 1, md: 1.5 },
-            minHeight: { xs: '70px', md: '90px' } 
+            py: { xs: 0.5, md: 1 },
+            minHeight: { xs: '60px', md: '80px' } 
           }}
         >
           {/* Logo Desktop */}
@@ -121,8 +121,8 @@ const Header = () => {
               <Image
                 src="/images/4ce7142d-36b2-42ed-ac5b-97103c248abd.png"
                 alt="D&R Advocacia Logo"
-                width={260}
-                height={73}
+                width={240}
+                height={67}
                 style={{ 
                   transition: 'filter 0.3s ease',
                 }}
@@ -197,8 +197,8 @@ const Header = () => {
               <Image
                 src="/images/4ce7142d-36b2-42ed-ac5b-97103c248abd.png"
                 alt="D&R Advocacia Logo"
-                width={220}
-                height={62}
+                width={200}
+                height={56}
                 style={{ 
                   transition: 'filter 0.3s ease',
                 }}
