@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -38,9 +38,6 @@ const Header = () => {
     threshold: 50,
   });
 
-  // Calcular altura do AppBar para padding do conteúdo
-  const headerHeight = { xs: 70, md: 90 };
-  
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
