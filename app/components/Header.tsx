@@ -39,7 +39,7 @@ const Header = () => {
   });
 
   // Calcular altura do AppBar para padding do conteúdo
-  const headerHeight = { xs: 80, md: 90 };
+  const headerHeight = { xs: 60, md: 80 };
   
   // Adicionar padding-top ao conteúdo principal
   useEffect(() => {
@@ -87,8 +87,8 @@ const Header = () => {
         <Toolbar 
           disableGutters
           sx={{ 
-            py: { xs: 0.5, md: 1 },
-            minHeight: { xs: '60px', md: '80px' } 
+            py: { xs: 0.25, md: 0.75 },
+            minHeight: { xs: '50px', md: '70px' } 
           }}
         >
           {/* Logo Desktop */}
