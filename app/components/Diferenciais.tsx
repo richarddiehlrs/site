@@ -35,7 +35,7 @@ const Diferenciais: React.FC = () => {
       sx={{
         py: { xs: 6, md: 8 },
         px: { xs: 2, sm: 4, md: 6 },
-        backgroundColor: theme.palette.background.default,
+        backgroundColor: theme.palette.primary.main,
         position: 'relative',
         overflow: 'hidden'
       }}
@@ -48,7 +48,7 @@ const Diferenciais: React.FC = () => {
           left: 0,
           right: 0,
           height: '1px',
-          background: `linear-gradient(to right, transparent, ${theme.palette.primary.main}, transparent)`,
+          background: `linear-gradient(to right, transparent, ${theme.palette.common.white}, transparent)`,
           opacity: 0.3
         }}
       />
@@ -59,7 +59,7 @@ const Diferenciais: React.FC = () => {
           left: 0,
           right: 0,
           height: '1px',
-          background: `linear-gradient(to right, transparent, ${theme.palette.primary.main}, transparent)`,
+          background: `linear-gradient(to right, transparent, ${theme.palette.common.white}, transparent)`,
           opacity: 0.3
         }}
       />
@@ -78,11 +78,11 @@ const Diferenciais: React.FC = () => {
             fontWeight: 700,
             textAlign: 'center',
             mb: { xs: 4, md: 6 },
-            color: theme.palette.text.primary,
+            color: theme.palette.common.white,
             fontFamily: theme.typography.h4.fontFamily
           }}
         >
-          Nossos Diferenciais
+          O QUE FAZ DA <span style={{ fontFamily: 'serif' }}>D&R</span> UMA ESCOLHA INTELIGENTE
         </Typography>
 
         <Box
@@ -119,14 +119,14 @@ const Diferenciais: React.FC = () => {
                     width: { xs: '40px', sm: '50px' },
                     height: { xs: '40px', sm: '50px' },
                     borderRadius: '50%',
-                    backgroundColor: theme.palette.primary.main,
+                    backgroundColor: theme.palette.common.white,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     flexShrink: 0
                   }}
                 >
-                  <CheckIcon sx={{ color: 'white', fontSize: { xs: '1.3rem', sm: '1.5rem' } }} />
+                  <CheckIcon sx={{ color: theme.palette.primary.main, fontSize: { xs: '1.3rem', sm: '1.5rem' } }} />
                 </Box>
                 <Box
                   sx={{
@@ -142,7 +142,7 @@ const Diferenciais: React.FC = () => {
                     sx={{
                       fontSize: { xs: '1rem', sm: '1.1rem', md: '1.2rem' },
                       fontWeight: 600,
-                      color: theme.palette.text.primary,
+                      color: theme.palette.common.white,
                       fontFamily: theme.typography.h4.fontFamily
                     }}
                   >
@@ -151,7 +151,7 @@ const Diferenciais: React.FC = () => {
                   <Typography
                     sx={{
                       fontSize: { xs: '0.85rem', sm: '0.9rem' },
-                      color: theme.palette.text.secondary,
+                      color: 'rgba(255, 255, 255, 0.85)',
                       lineHeight: 1.6
                     }}
                   >
