@@ -47,6 +47,19 @@ const Footer = () => {
                 }}
                 priority
               />
+              <Typography 
+                variant="body2" 
+                color={theme.palette.secondary.light}
+                sx={{ 
+                  display: 'block', 
+                  textAlign: 'center',
+                  fontSize: '0.9rem',
+                  fontWeight: 500,
+                  mb: 1
+                }}
+              >
+                OAB/RS 13.183
+              </Typography>
             </Box>
             <Typography 
               variant="body2" 
