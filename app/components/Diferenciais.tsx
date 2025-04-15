@@ -9,6 +9,7 @@ const Diferenciais: React.FC = () => {
   const theme = useTheme();
   const goldColor = '#E5B27E';
   const blackColor = '#0A0A0A';
+  const bordeauxColor = '#260d0d';
 
   const diferenciais = [
     {
@@ -64,6 +65,10 @@ const Diferenciais: React.FC = () => {
             fontFamily: theme.typography.h2.fontFamily,
             textTransform: 'uppercase',
             position: 'relative',
+            padding: '15px 20px',
+            borderRadius: '8px',
+            background: `linear-gradient(135deg, ${alpha(bordeauxColor, 0.9)} 0%, ${alpha(blackColor, 0.8)} 100%)`,
+            boxShadow: `0 4px 20px ${alpha(bordeauxColor, 0.7)}`,
             '&::after': {
               content: '""',
               position: 'absolute',
