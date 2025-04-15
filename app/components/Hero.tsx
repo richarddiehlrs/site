@@ -31,7 +31,14 @@ const fadeIn = keyframes`
 
 interface HeroText {
   title: string;
-  content: Array<string | { text: string; fontWeight?: number; color?: string; fontStyle?: string }>;
+  content: Array<string | { 
+    text: string; 
+    fontWeight?: number; 
+    color?: string; 
+    fontStyle?: string;
+    display?: string;
+    marginTop?: string;
+  }>;
 }
 
 const heroTexts: HeroText[] = [
@@ -45,7 +52,11 @@ const heroTexts: HeroText[] = [
         color: 'white'
       },
       ".",
-      "Com atendimento personalizado, visão preventiva e foco em resultados, somos o parceiro jurídico que antecipa riscos e protege o que realmente importa para você — porque nascemos para ser referência nacional em advocacia empresarial estratégica."
+      {
+        text: "\nCom atendimento personalizado, visão preventiva e foco em resultados, somos o parceiro jurídico que antecipa riscos e protege o que realmente importa para você — porque nascemos para ser referência nacional em advocacia empresarial estratégica.",
+        display: 'block',
+        marginTop: '1.5rem'
+      }
     ]
   },
   {
@@ -218,7 +229,8 @@ const Hero = () => {
                       key={index}
                       component="span"
                       sx={{
-                        display: 'inline',
+                        display: typeof content === 'object' && content.display ? content.display : 'inline',
+                        marginTop: typeof content === 'object' && content.marginTop ? content.marginTop : undefined,
                         fontWeight: typeof content === 'object' ? content.fontWeight : 400,
                         color: typeof content === 'object' ? content.color : undefined,
                         fontStyle: typeof content === 'object' ? content.fontStyle : 'normal',
