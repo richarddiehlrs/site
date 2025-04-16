@@ -71,8 +71,8 @@ const Hero = () => {
         paddingTop: { xs: '240px', sm: '250px', md: '220px' },
         paddingBottom: { xs: '60px', sm: '80px', md: '60px' },
         background: `
-          linear-gradient(to right, ${alpha(blackColor, 0.7)}, ${alpha(blackColor, 0.7)}),
-          url('/images/banner.jpg')
+          linear-gradient(to right, ${alpha(blackColor, 0.5)}, ${alpha(blackColor, 0.5)}),
+          url('/images/office-banner.jpg')
         `,
         backgroundSize: 'cover',
         backgroundPosition: 'center',

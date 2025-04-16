@@ -1,11 +1,28 @@
 'use client';
 
 import Image from 'next/image';
-import { Box, Typography, Container, Grid, Link as MuiLink, Divider, useTheme } from '@mui/material';
+import { Box, Typography, Container, Grid, Link as MuiLink, Divider, useTheme, Theme } from '@mui/material';
 import { FaInstagram, FaFacebookF } from 'react-icons/fa';
 
 // Mesma cor bordô usada em outros componentes
 const bordeauxColor = '#260d0d';
+
+// Estilo comum para ícones sociais
+const socialIconStyle = (theme: Theme) => ({
+  color: 'white',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: '40px',
+  height: '40px',
+  borderRadius: '50%',
+  border: '1px solid rgba(255,255,255,0.2)',
+  transition: 'all 0.3s ease',
+  '&:hover': { 
+    color: theme.palette.secondary.light,
+    borderColor: theme.palette.secondary.light
+  }
+});
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -90,22 +107,7 @@ const Footer = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                sx={{
-                  color: 'white',
-                  '&:hover': { color: theme.palette.secondary.light },
-                  transition: 'color 0.3s ease',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  width: '40px',
-                  height: '40px',
-                  borderRadius: '50%',
-                  border: '1px solid rgba(255,255,255,0.2)',
-                  '&:hover': { 
-                    color: theme.palette.secondary.light,
-                    borderColor: theme.palette.secondary.light,
-                  },
-                }}
+                sx={socialIconStyle(theme)}
               >
                 <FaFacebookF size={20} />
               </MuiLink>
@@ -114,20 +116,7 @@ const Footer = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                sx={{
-                  color: 'white',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  width: '40px',
-                  height: '40px',
-                  borderRadius: '50%',
-                  border: '1px solid rgba(255,255,255,0.2)',
-                  '&:hover': { 
-                    color: theme.palette.secondary.light,
-                    borderColor: theme.palette.secondary.light,
-                  },
-                }}
+                sx={socialIconStyle(theme)}
               >
                 <FaInstagram size={20} />
               </MuiLink>
