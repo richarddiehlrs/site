@@ -72,8 +72,8 @@ const Hero = () => {
         paddingBottom: { xs: '60px', sm: '80px', md: '60px' },
         backgroundColor: '#121212',
         background: `
-          linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-          url('/images/dr-office-front.jpg')
+          linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+          url('https://raw.githubusercontent.com/richarddiehlrs/site/main/public/images/dr-office-front.jpg')
         `,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
