@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { Box, Typography, Container, Grid, Link as MuiLink, Divider, useTheme } from '@mui/material';
-import { FaInstagram, FaPhone, FaEnvelope, FaFacebookF } from 'react-icons/fa';
+import { FaInstagram, FaFacebookF } from 'react-icons/fa';
 
 // Mesma cor bordô usada em outros componentes
 const bordeauxColor = '#260d0d';
@@ -18,11 +18,21 @@ const Footer = () => {
         bgcolor: bordeauxColor,
         color: 'white',
         py: 6,
+        position: 'relative',
+        '&::before': {
+          content: '""',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '1px',
+          background: `linear-gradient(to right, rgba(139, 125, 85, 0.2), rgba(139, 125, 85, 0.8), rgba(139, 125, 85, 0.2))`,
+        }
       }}
     >
       <Container maxWidth="lg">
-        <Grid container spacing={4} mb={4}>
-          <Grid item xs={12} md={4}>
+        <Grid container spacing={6} mb={5}>
+          <Grid item xs={12} md={6}>
             <Box 
               mb={3}
               sx={{
@@ -62,15 +72,19 @@ const Footer = () => {
               </Typography>
             </Box>
             <Typography 
-              variant="body2" 
+              variant="body1" 
               color="grey.300" 
               mb={3}
-              sx={{ maxWidth: '300px' }}
+              sx={{ 
+                maxWidth: '450px', 
+                fontSize: '1rem',
+                lineHeight: 1.7
+              }}
             >
               Assessoria jurídica especializada com atendimento personalizado
               e soluções eficientes para você e sua empresa.
             </Typography>
-            <Box display="flex" alignItems="center" gap={2}>
+            <Box display="flex" alignItems="center" gap={3} mt={4}>
               <MuiLink 
                 href="https://www.facebook.com/profile.php?id=100090935949111&locale=pt_BR" 
                 target="_blank" 
@@ -80,6 +94,17 @@ const Footer = () => {
                   color: 'white',
                   '&:hover': { color: theme.palette.secondary.light },
                   transition: 'color 0.3s ease',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '50%',
+                  border: '1px solid rgba(255,255,255,0.2)',
+                  '&:hover': { 
+                    color: theme.palette.secondary.light,
+                    borderColor: theme.palette.secondary.light,
+                  },
                 }}
               >
                 <FaFacebookF size={20} />
@@ -91,43 +116,30 @@ const Footer = () => {
                 aria-label="Instagram"
                 sx={{
                   color: 'white',
-                  '&:hover': { color: theme.palette.secondary.light },
-                  transition: 'color 0.3s ease',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '50%',
+                  border: '1px solid rgba(255,255,255,0.2)',
+                  '&:hover': { 
+                    color: theme.palette.secondary.light,
+                    borderColor: theme.palette.secondary.light,
+                  },
                 }}
               >
                 <FaInstagram size={20} />
               </MuiLink>
-              <MuiLink 
-                href="tel:5199707-8004" 
-                aria-label="Telefone"
-                sx={{
-                  color: 'white',
-                  '&:hover': { color: theme.palette.secondary.light },
-                  transition: 'color 0.3s ease',
-                }}
-              >
-                <FaPhone size={20} />
-              </MuiLink>
-              <MuiLink 
-                href="mailto:contato@deradvocacia.com.br" 
-                aria-label="Email"
-                sx={{
-                  color: 'white',
-                  '&:hover': { color: theme.palette.secondary.light },
-                  transition: 'color 0.3s ease',
-                }}
-              >
-                <FaEnvelope size={20} />
-              </MuiLink>
             </Box>
           </Grid>
           
-          <Grid item xs={12} md={4}>
-            <Box sx={{ bgcolor: bordeauxColor, p: 3, borderRadius: 1 }}>
-              <Typography variant="h6" fontFamily={theme.typography.h6.fontFamily} fontWeight={600} mb={3}>
+          <Grid item xs={12} md={6}>
+            <Box sx={{ p: 3, borderRadius: 1, border: '1px solid rgba(255,255,255,0.1)' }}>
+              <Typography variant="h5" fontFamily={theme.typography.h5.fontFamily} fontWeight={600} mb={3}>
                 Links Rápidos
               </Typography>
-              <Box component="ul" sx={{ listStyle: 'none', padding: 0, margin: 0 }}>
+              <Grid container spacing={2}>
                 {[
                   { title: 'Home', id: 'home' },
                   { title: 'Áreas de Atuação', id: 'atuacao' },
@@ -136,62 +148,43 @@ const Footer = () => {
                   { title: 'Planejamento', id: 'planejamento' },
                   { title: 'Contato', id: 'contato' }
                 ].map((link, index) => (
-                  <Box component="li" key={index} mb={1}>
+                  <Grid item xs={6} key={index}>
                     <MuiLink
                       href={`#${link.id}`}
                       underline="none"
                       sx={{
                         color: 'grey.300',
-                        '&:hover': { color: theme.palette.secondary.light },
-                        transition: 'color 0.3s ease',
+                        display: 'flex',
+                        alignItems: 'center',
+                        fontSize: '1rem',
+                        '&:hover': { 
+                          color: theme.palette.secondary.light,
+                          transform: 'translateX(5px)'
+                        },
+                        transition: 'all 0.3s ease',
+                        '&::before': {
+                          content: '""',
+                          display: 'inline-block',
+                          width: '6px',
+                          height: '6px',
+                          backgroundColor: theme.palette.secondary.main,
+                          borderRadius: '50%',
+                          marginRight: '10px'
+                        }
                       }}
                     >
                       {link.title}
                     </MuiLink>
-                  </Box>
+                  </Grid>
                 ))}
-              </Box>
-            </Box>
-          </Grid>
-          
-          <Grid item xs={12} md={4}>
-            <Typography variant="h6" fontFamily={theme.typography.h6.fontFamily} fontWeight={600} mb={3}>
-              Contato
-            </Typography>
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-              <Box>
-                <Typography variant="subtitle2" fontWeight={600} color={theme.palette.secondary.light}>
-                  Telefone:
-                </Typography>
-                <Typography variant="body2" color="grey.300">
-                  (51) 9 9707-8004
-                </Typography>
-              </Box>
-              <Box>
-                <Typography variant="subtitle2" fontWeight={600} color={theme.palette.secondary.light}>
-                  E-mail:
-                </Typography>
-                <Typography variant="body2" color="grey.300">
-                  contato@deradvocacia.com.br
-                </Typography>
-              </Box>
-              <Box>
-                <Typography variant="subtitle2" fontWeight={600} color={theme.palette.secondary.light}>
-                  Endereço:
-                </Typography>
-                <Typography variant="body2" color="grey.300">
-                  Avenida Cristovão Colombo, 2955<br />
-                  Sala 402<br />
-                  Porto Alegre/RS
-                </Typography>
-              </Box>
+              </Grid>
             </Box>
           </Grid>
         </Grid>
         
         <Divider sx={{ borderColor: 'rgba(255,255,255,0.1)' }} />
         
-        <Box sx={{ pt: 3, textAlign: 'center' }}>
+        <Box sx={{ pt: 4, textAlign: 'center' }}>
           <Typography variant="body2" color="grey.400">
             © {year} D<span style={{ fontFamily: 'serif' }}>&</span>R Advocacia - Todos os direitos reservados
           </Typography>
