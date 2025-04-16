@@ -70,10 +70,9 @@ const Hero = () => {
         overflow: 'visible',
         paddingTop: { xs: '240px', sm: '250px', md: '220px' },
         paddingBottom: { xs: '60px', sm: '80px', md: '60px' },
-        backgroundColor: '#1a1a1a',
+        backgroundColor: '#121212',
         background: `
-          linear-gradient(to right, ${alpha(blackColor, 0.3)}, ${alpha(blackColor, 0.3)}),
-          url('/images/dr-office-front.jpg')
+          linear-gradient(to right, rgba(38, 13, 13, 0.9), rgba(18, 18, 18, 0.95))
         `,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -85,9 +84,7 @@ const Hero = () => {
           left: 0,
           width: '100%',
           height: '100%',
-          background: `linear-gradient(110deg, ${alpha(bordeauxColor, 0.1)} 0%, ${alpha('#1a0808', 0.05)} 100%)`,
-          backgroundSize: '200% 100%',
-          animation: `${fadeIn} 15s infinite linear`,
+          background: `radial-gradient(circle at 30% 40%, rgba(38, 13, 13, 0.4) 0%, rgba(18, 18, 18, 0) 70%)`,
           zIndex: 1,
           pointerEvents: 'none',
         }
