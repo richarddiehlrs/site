@@ -72,7 +72,8 @@ const Hero = () => {
         paddingBottom: { xs: '60px', sm: '80px', md: '60px' },
         backgroundColor: '#121212',
         background: `
-          linear-gradient(to right, rgba(38, 13, 13, 0.9), rgba(18, 18, 18, 0.95))
+          linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url('/images/dr-office-front.jpg')
         `,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
