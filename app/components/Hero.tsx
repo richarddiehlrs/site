@@ -70,9 +70,10 @@ const Hero = () => {
         overflow: 'visible',
         paddingTop: { xs: '240px', sm: '250px', md: '220px' },
         paddingBottom: { xs: '60px', sm: '80px', md: '60px' },
+        backgroundColor: '#1a1a1a',
         background: `
-          linear-gradient(to right, ${alpha(blackColor, 0.6)}, ${alpha(blackColor, 0.6)}),
-          url('/images/office-banner.jpg?v=2')
+          linear-gradient(to right, ${alpha(blackColor, 0.3)}, ${alpha(blackColor, 0.3)}),
+          url('/images/dr-office-front.jpg')
         `,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
