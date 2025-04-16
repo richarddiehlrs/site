@@ -73,7 +73,7 @@ const Hero = () => {
         backgroundColor: '#121212',
         background: `
           linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-          url('https://raw.githubusercontent.com/richarddiehlrs/site/main/public/images/dr-office-front.jpg')
+          url('/images/banner.jpg')
         `,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
